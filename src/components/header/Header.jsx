@@ -33,7 +33,7 @@ export default function Header({ menuItems = [] }) {
           {/* LEFT: Burger */}
           <button
             onClick={() => setMenuOpen(true)}
-            className="flex flex-col gap-1"
+            className="flex flex-col gap-1 cursor-pointer"
           >
             <span className="w-6 h-[2px] bg-white"></span>
             <span className="w-6 h-[2px] bg-white"></span>
@@ -79,7 +79,7 @@ export default function Header({ menuItems = [] }) {
           ${menuOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
-        <button onClick={() => setMenuOpen(false)} className="p-6 text-2xl">
+        <button onClick={() => setMenuOpen(false)} className="p-6 text-2xl cursor-pointer">
           ✕
         </button>
 
