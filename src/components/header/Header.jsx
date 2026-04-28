@@ -4,10 +4,15 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Logo from "../logo/Logo";
 import Navigation from "../navigation/Navigation";
+import { usePathname } from "next/navigation";
 
-export default function Header({ menuItems = [] }) {
+export default function Header({ menuItems = [], variant = "light"  }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const pathname = usePathname();
+
+   const isLightPage = pathname === "/contact";
 
   // Detect scroll
   useEffect(() => {
@@ -25,7 +30,13 @@ export default function Header({ menuItems = [] }) {
       <header
         className={`
           fixed w-full z-50 px-6 py-5 transition-all duration-300
-          ${scrolled ? "bg-black shadow-md" : "bg-transparent"}
+          ${
+          isLightPage
+            ? "bg-black/90 backdrop-blur-md shadow text-slate-900"
+            : scrolled
+            ? "bg-black shadow-md text-white"
+            : "bg-transparent text-white"
+        }
         `}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
