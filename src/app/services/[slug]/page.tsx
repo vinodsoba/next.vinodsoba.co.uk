@@ -3,6 +3,11 @@ import Image from "next/image";
 import Section from "@/components/Section/Section";
 import WireframeToUI from "@/components/wireframe/WireframeToUI";
 import DesignSystem from "@/components/designsystem/DesignSystem";
+import UserJourney from "@/components/userjourney/UserJourney";
+import CodeToUI from "@/components/codetoui/CodeToUI";
+import ResponsivePreview from "@/components/responsivepreview/ResponsivePreview";
+import ConversionFlow from "@/components/conversionflow/ConversionFlow";
+import LetsTalk from "@/components/letstalk/LetsTalk";
 
 
 export const revalidate = 60;
@@ -61,7 +66,7 @@ export default async function ServicePage({
       {/* CONTENT */}
       <section className="py-20">
         <div
-          className="max-w-3xl mx-auto px-6 prose"
+          className="max-w-3xl mx-auto px-6 prose text-3xl align-left"
           dangerouslySetInnerHTML={{
             __html: service?.content?.rendered || "",
           }}
@@ -74,7 +79,10 @@ export default async function ServicePage({
             step="01"
             title="Understanding the user journey"
             description="I start by identifying the purpose of the page, the user’s intent, and the key action they need to take."
-          />
+            gradient="from-blue-500 via-cyan-400 to-emerald-400"
+          >
+            <UserJourney />
+          </Section>
 
           <Section
             step="02"
@@ -98,19 +106,29 @@ export default async function ServicePage({
             step="04"
             title="Building with React, Next.js and Tailwind CSS"
             description="I turn designs into clean, maintainable front-end components using modern development tools."
-          />
+            gradient="from-indigo-500 via-blue-500 to-sky-400"
+          >
+            <CodeToUI />
+          </Section>
 
           <Section
             step="05"
             title="Optimising for every device"
             description="Every layout is built mobile-first to ensure a smooth experience across desktop, tablet, and mobile."
-          />
+            gradient="from-emerald-400 via-teal-400 to-cyan-500"
+          >
+            <ResponsivePreview />
+          </Section>
 
           <Section
             step="06"
             title="Designing for engagement and conversion"
             description="I structure pages with clear calls to action, strong content hierarchy, and intuitive journeys that support business goals."
-          />
+            gradient="from-yellow-400 via-orange-400 to-red-500"
+          >
+            <ConversionFlow />
+          </Section>
+          <LetsTalk />
         </>
       )}
 

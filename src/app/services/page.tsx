@@ -1,5 +1,19 @@
 import Link from "next/link";
 import { getServices } from "@/lib/getServices";
+import ServiceCard from "@/components/servicecard/ServiceCard";
+
+type Service = {
+  id: number;
+  slug: string;
+  title: { rendered: string };
+  excerpt: { rendered: string };
+  acf?: {
+    post_images?: string;
+  };
+  _embedded?: {
+    "wp:featuredmedia"?: [{ source_url: string }];
+  };
+};
 
 export default async function ServicesPage() {
   const services = await getServices();
@@ -18,47 +32,33 @@ export default async function ServicesPage() {
       </section>
 
       {/* GRID */}
-      <section className="pb-24">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+      <section className="px-6 py-20 bg-slate-50">
+  <div className="max-w-6xl mx-auto">
+    <h1 className="text-4xl md:text-6xl font-bold text-slate-900">
+      Services
+    </h1>
 
-          {services.map((service: any) => {
-            const image =
-              service.acf?.post_images ||
-              service._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+    <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {services.map((service: Service, index: number) => {
+        const image =
+          service?.acf?.post_images ||
+          service?._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+          null;
 
-            return (
-              <Link
-                key={service.id}
-                href={`/services/${service.slug}`}
-                className="group block"
-              >
-                {image && (
-                  <img
-                    src={image}
-                    alt=""
-                    className="w-full h-[300px] object-cover rounded-xl mb-4"
-                  />
-                )}
-
-                <h2
-                  className="text-2xl font-semibold mb-2 group-hover:text-gray-300"
-                  dangerouslySetInnerHTML={{
-                    __html: service.title.rendered,
-                  }}
-                />
-
-                <div
-                  className="text-gray-400"
-                  dangerouslySetInnerHTML={{
-                    __html: service.excerpt?.rendered || "",
-                  }}
-                />
-              </Link>
-            );
-          })}
-
-        </div>
-      </section>
+        return (
+          <ServiceCard
+            key={service.id}
+            index={index}
+            title={service?.title?.rendered || "Service"}
+            excerpt={service?.excerpt?.rendered || ""}
+            slug={service.slug}
+            image={image}
+          />
+        );
+      })}
+    </div>
+  </div>
+</section>
 
     </main>
   );
