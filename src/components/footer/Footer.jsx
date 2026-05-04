@@ -10,11 +10,6 @@ export default function Footer() {
         bg-black text-white
         py-20
       "
-      style={{
-        backgroundImage: "url('/images/vs-footer-bg.png')",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
     >
       <div className="max-w-6xl mx-auto px-6">
 
