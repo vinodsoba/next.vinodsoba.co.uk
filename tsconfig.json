@@ -40,7 +40,7 @@
     "src/components/header/Header.tsx",
     "src/components/navigation/Navigation.jsx",
     "src/components/Section/Section.jsx"
-  ],
+, "src/components/player/Player.jsx", "src/components/player/Player.jsx", "src/components/player/Player.jsx"  ],
   "exclude": [
     "node_modules"
   ]

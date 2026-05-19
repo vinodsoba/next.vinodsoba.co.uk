@@ -44,7 +44,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="rounded-3xl bg-slate-950 p-8 text-white shadow-2xl">
+          <div className="rounded-md bg-slate-950 p-8 text-white shadow-2xl">
             <h2 className="text-2xl font-bold">Start a conversation</h2>
 
             <p className="mt-3 text-slate-300">
@@ -60,7 +60,7 @@ export default function ContactPage() {
                 <input
                   type="text"
                   name="name"
-                  className="w-full rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-pink-400"
+                  className="w-full rounded-md border border-white/10 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-pink-400"
                   placeholder="Your name"
                 />
               </div>
@@ -72,7 +72,7 @@ export default function ContactPage() {
                 <input
                   type="email"
                   name="email"
-                  className="w-full rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-pink-400"
+                  className="w-full rounded-md border border-white/10 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-pink-400"
                   placeholder="you@example.com"
                 />
               </div>
@@ -83,7 +83,7 @@ export default function ContactPage() {
                 </label>
                 <select
                   name="projectType"
-                  className="w-full rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white outline-none focus:border-pink-400"
+                  className="w-full rounded-md border border-white/10 bg-white/10 px-4 py-3 text-white outline-none focus:border-pink-400"
                 >
                   <option className="text-slate-900">Web Design</option>
                   <option className="text-slate-900">Front-End Development</option>
@@ -100,14 +100,14 @@ export default function ContactPage() {
                 <textarea
                   name="message"
                   rows={5}
-                  className="w-full rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-pink-400"
+                  className="w-full rounded-md border border-white/10 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-pink-400"
                   placeholder="Tell me about your project..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full rounded-full bg-gradient-to-r from-pink-500 to-orange-400 px-6 py-3 text-sm font-bold text-white transition hover:scale-[1.02]"
+                className="w-full rounded-md bg-gradient-to-r from-pink-500 to-orange-400 px-6 py-3 text-sm font-bold text-white transition hover:scale-[1.02]"
               >
                 Send Message
               </button>
@@ -118,7 +118,7 @@ export default function ContactPage() {
 
       <section className="px-6 pb-24">
         <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
-          <div className="rounded-2xl bg-slate-50 p-6">
+          <div className="rounded-md bg-slate-50 p-6">
             <h3 className="font-bold">Web Design</h3>
             <p className="mt-2 text-sm text-slate-600">
               Modern, responsive page layouts with strong UX and clear visual
@@ -126,7 +126,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl bg-slate-50 p-6">
+          <div className="rounded-md bg-slate-50 p-6">
             <h3 className="font-bold">Front-End Development</h3>
             <p className="mt-2 text-sm text-slate-600">
               React, Next.js and Tailwind CSS builds focused on performance and
@@ -134,7 +134,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl bg-slate-50 p-6">
+          <div className="rounded-md bg-slate-50 p-6">
             <h3 className="font-bold">eCommerce</h3>
             <p className="mt-2 text-sm text-slate-600">
               Conversion-focused layouts, product journeys and scalable

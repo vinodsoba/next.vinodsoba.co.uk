@@ -41,7 +41,7 @@ export default function WhatIDo({ acf }) {
 
             <Link
               href="/about"
-              className="bg-black text-white px-6 py-3 rounded-full"
+              className="bg-black text-white px-6 py-3 rounded-md"
             >
               {acf.what_i_do_cta_text}
             </Link>

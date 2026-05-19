@@ -64,7 +64,7 @@ export default function Header({ menuItems = [], variant = "light"  }) {
             </Link>
             <Link
               href="/signup"
-              className="px-4 py-2 border border-white/30 rounded-full text-white hover:bg-white hover:text-black transition"
+              className="px-4 py-2 border border-white/30 rounded-md text-white hover:bg-white hover:text-black transition"
             >
               Sign Up
             </Link>
@@ -104,7 +104,7 @@ export default function Header({ menuItems = [], variant = "light"  }) {
           </Link>
           <Link
             href="/signup"
-            className="block text-lg border border-white/20 rounded-full py-3 max-w-[280px] mx-auto hover:bg-white hover:text-black transition"
+            className="block text-lg border border-white/20 rounded-md py-3 max-w-[280px] mx-auto hover:bg-white hover:text-black transition"
           >
             Sign Up
           </Link>
