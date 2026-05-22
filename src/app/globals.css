@@ -27,3 +27,20 @@ body {
   color: var(--foreground);
   overflow-x: hidden;
 }
+
+@media print {
+
+  section {
+    break-inside: avoid;
+  }
+
+  h2, h3 {
+    break-after: avoid;
+  }
+
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+
+}
