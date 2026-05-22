@@ -6,6 +6,16 @@ import Logo from "../logo/Logo";
 import Navigation from "../navigation/Navigation";
 import { usePathname } from "next/navigation";
 
+/**
+ * @param {{
+ *   menuItems: {
+ *     title: string;
+ *     url: string;
+ *   }[];
+ * }} props
+ */
+
+
 export default function Header({ menuItems = [], variant = "light"  }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -63,7 +73,7 @@ export default function Header({ menuItems = [], variant = "light"  }) {
               Login
             </Link>
             <Link
-              href="/signup"
+              href="/register"
               className="px-4 py-2 border border-white/30 rounded-md text-white hover:bg-white hover:text-black transition"
             >
               Sign Up

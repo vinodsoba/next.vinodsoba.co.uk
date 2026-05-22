@@ -1,9 +1,7 @@
 import "./globals.css";
 import localFont from "next/font/local";
-import Header from "@/components/header/Header";
-import Footer from "@/components/footer/Footer";
+import LayoutWrapper from "@/components/layout/LayoutWrapper";
 import { getMenu } from "@/lib/menu";
-
 
 const manrope = localFont({
   src: [
@@ -28,18 +26,15 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   const menuItems = await getMenu();
+  
   return (
     <html lang="en" className={manrope.variable}>
       <body className="font-[var(--font-manrope)] bg-black text-white">
-         {/* HEADER */}
-        <Header  menuItems={menuItems} />
-
-        {/* PAGE CONTENT */}
-        <main>{children}</main>
-
-        {/* FOOTER */}
-        <Footer />
+        <LayoutWrapper menuItems={menuItems}>
+        {children}
+        </LayoutWrapper>
       </body>
     </html>
   );
