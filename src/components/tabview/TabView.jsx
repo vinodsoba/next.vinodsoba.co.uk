@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import CodePanel from "../codepanel/CodePanel";
 
 export default function TabView({ tabs = [] }) {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -8,13 +9,13 @@ export default function TabView({ tabs = [] }) {
   if (!tabs.length) {
     return <div>No Tabs</div>;
   }
-
+console.log(tabs);
   return (
     <div className="w-full">
 
       {/* Tabs Row */}
       <div className="overflow-x-auto">
-        <div className="flex gap-6 px-4 md:px-0 w-max md:w-full">
+        <div className="flex gap-6 px-4 md:px-0 w-max md:w-full justify-end">
           {tabs.map((tab, index) => (
             <div
               key={index}
@@ -28,25 +29,34 @@ export default function TabView({ tabs = [] }) {
               `}
               
             >
-              {tab.name}
-              <p className="text-sm mt-2 text-black">{tab.title}</p>
+              <div className="flex flex-col items-center">
+                {tab.name}
+
+                <p className="text-sm mt-2 text-black">
+                  {tab.title}
+                </p>
+
+              </div>
+              
             </div>
           ))}
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="grid md:grid-cols-2 gap-10 items-start">
+      <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-        {/* Image */}
+        {/* Code Panel */}
         <div className="w-full">
-          {tabs[activeTabIndex].image}
+          <CodePanel
+            code={tabs[activeTabIndex].code}
+          />
         </div>
 
         {/* Content */}
-        <div className="text-gray-700 text-lg leading-relaxed">
+        <div className="prose prose-lg max-w-none text-slate-600 leading-8">
           {tabs[activeTabIndex].content}
-        </div>
+        </div>        
 
       </div>
 
