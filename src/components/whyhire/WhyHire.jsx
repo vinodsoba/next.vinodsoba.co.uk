@@ -1,9 +1,29 @@
-
 "use client";
-
 
 import { Caveat } from "next/font/google";
 import { motion } from "framer-motion";
+import {
+  Briefcase,
+  BarChart3,
+  Users,
+  Rocket,
+} from "lucide-react";
+import { Download } from "lucide-react";
+import {
+  SiNextdotjs,
+  SiWordpress,
+  SiReact,
+  SiTailwindcss,
+  SiJavascript,
+} from "react-icons/si";
+
+
+
+import {
+  FiSearch,
+  FiBarChart2,
+  FiShoppingBag
+} from "react-icons/fi";
 
 const caveat = Caveat({
   subsets: ["latin"],
@@ -17,11 +37,36 @@ export default function WhyHire({ data }) {
   const skills = data?.skill_list
     ? data.skill_list.split(/\r?\n/)
     : [];
+  
+  const stats = data?.stats_list
+  ? data.stats_list.split(/\r?\n/)
+  : [];
+
+  const statIcons = [
+    Briefcase,
+    BarChart3,
+    Users,
+    Rocket,
+  ];
+
+  const skillIcons = {
+    "Next.js": SiNextdotjs,
+    Magento: FiShoppingBag,
+    WordPress: SiWordpress,
+    React: SiReact,
+    "Tailwind CSS": SiTailwindcss,
+    JavaScript: SiJavascript,
+    GA4: FiBarChart2,
+    SEO: FiSearch,
+  };
+
+
+  
 
   return (
-    <section className="max-w-6xl mx-auto py-24 px-6">
+    <section className="max-w-6xl mx-auto py-24 px-6 sm">
 
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
 
         {/* Left Content */}
         <div>
@@ -47,7 +92,7 @@ export default function WhyHire({ data }) {
 
         </div>
 
-          <h2 className="text-5xl font-bold leading-tight mb-6">
+          <h2 className="text-6xl lg:text-7xl font-bold leading-tight mb-6">
             <div dangerouslySetInnerHTML={{__html: data.title}} />
           </h2>
 
@@ -60,18 +105,45 @@ export default function WhyHire({ data }) {
           </div>
 
           {/* Skills */}
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-x-8 gap-y-6 mb-12 max-w-2xl">
 
-            {skills.map((skill, index) => (
-              <div
+          {skills.map((skill, index) => {
+
+            const cleanSkill = skill.trim();
+
+            const Icon = skillIcons[cleanSkill];
+
+            return (
+
+              <motion.div
                 key={index}
-                className="px-4 py-2 rounded-xl border border-slate-200 bg-white shadow-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.4,
+                  delay: index * 0.05,
+                }}
+                viewport={{ once: true }}
+                className="flex items-center gap-3"
               >
-                {skill}
-              </div>
-            ))}
 
-          </div>
+                {Icon && (
+                  <Icon
+                    size={18}
+                    className="text-black shrink-0"
+                  />
+                )}
+
+                <span className="text-lg text-slate-700">
+                  {cleanSkill}
+                </span>
+
+              </motion.div>
+
+            );
+          })}
+
+        </div>
 
           {/* buttons */}
           <div className="flex gap-4 mt-10">
@@ -85,12 +157,85 @@ export default function WhyHire({ data }) {
 
             <a
               href={data.secondary_button_url}
-              className="px-6 py-4 rounded-xl border border-slate-300 font-medium"
+              download
+              className="group flex items-center gap-2 text-emerald-600 font-medium hover:text-emerald-700 transition"
             >
-              {data.secondary_button_text}
+              <span className="relative">
+
+                {data.secondary_button_text}
+
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-emerald-600 transition-all duration-300 group-hover:w-full"></span>
+
+              </span>
+
+                <Download
+                  size={18}
+                  className="transition-transform duration-300 group-hover:translate-y-[2px]"
+                />
+
             </a>
 
           </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-14 md:w-full">
+
+          
+
+          {stats.map((item, index) => {
+
+            const Icon = statIcons[index];
+
+            const [number, label] = item.split("|");
+
+           
+
+            return (
+
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                }}
+                viewport={{ once: true }}
+                className="bg-white/80 backdrop-blur-sm border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition md:text-sm md:p-3"
+              >
+              
+              <div className="flex items-center gap-4">
+
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-xl bg-emerald-50 flex items-center justify-center text-2xl">
+
+                <Icon
+                  size={28}
+                  className="black"
+                />
+
+              </div>
+
+              {/* Text */}
+              <div>
+
+                <h3 className="text-3xl font-bold text-emerald-600 leading-none mb-1">
+                  {number}
+                </h3>
+
+                <p className="text-xs text-black">
+                  {label}
+                </p>
+
+              </div>
+
+            </div>
+
+            </motion.div>
+
+            );
+          })}
+
+        </div>
 
         </div>
 
@@ -100,11 +245,11 @@ export default function WhyHire({ data }) {
           <img
             src={data.image}
             alt="Why Hire"
-            className="max-w-sm w-full"
+            className="w-full max-w-[500px]"
           />
 
           {/* Floating Note */}
-          <div className="absolute md:right-1 -right-16 top-20 hidden md:block xl:block z-10">
+          <div className="absolute md:-right-10 -right-16 top-20 hidden md:block xl:block z-10">
 
             <p className={`${caveat.className} text-emerald-600 text-2xl rotate-[-6deg] handwritten`}>
               Real projects.

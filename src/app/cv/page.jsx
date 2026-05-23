@@ -304,7 +304,7 @@ export default function CVPage() {
                     </div>
 
                     <span className="text-sm text-slate-500 mt-2 md:mt-0">
-                    Oct 2022 — Present
+                    Oct 2022 — May 2026
                     </span>
                 </div>
 
