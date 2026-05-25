@@ -92,10 +92,10 @@ export default function CodePanel({ code }) {
       <div className="absolute inset-0 bg-emerald-500/10 blur-3xl rounded-[40px]"></div>
 
       {/* Editor */}
-      <div className="relative bg-[#07111f] rounded-[32px] overflow-hidden border border-slate-800 shadow-2xl">
+      <div className="relative w-full max-w-full bg-[#07111f] rounded-2xl md:rounded-[32px] overflow-hidden border border-slate-800 shadow-2xl">
 
         {/* Top Bar */}
-        <div className="flex items-center px-5 py-3 border-b border-slate-800">
+        <div className="flex items-center px-3 py-3 md:px-5 md:py-4 border-b border-slate-800">
 
           {/* Mac Buttons */}
           <div className="flex gap-2">
@@ -107,7 +107,7 @@ export default function CodePanel({ code }) {
           </div>
 
           {/* Tabs */}
-          <div className="ml-auto flex gap-2">
+          <div className="ml-auto flex gap-2 overflow-x-auto">
 
             <div className="px-4 py-2 rounded-t-xl bg-slate-900 text-emerald-400 text-sm">
               globals.css
@@ -146,18 +146,9 @@ export default function CodePanel({ code }) {
 
             <motion.div
               key={code}
-              initial={{
-                opacity: 0,
-                y: 10,
-              }}
-              animate={{
-                opacity: 1,
-                y: [0, -8, 0]
-              }}
-              exit={{
-                opacity: 0,
-                y: -10,
-              }}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+             
               transition={{
                 duration: 0.35,
                 ease: "easeInOut",
@@ -165,7 +156,7 @@ export default function CodePanel({ code }) {
               className="relative"
             >
 
-              <pre className="whitespace-pre-wrap text-slate-300">
+              <pre className="whitespace-pre-wrap text-slate-300 overflow-x-auto">
                 {highlightCode(code)}
               </pre>
 

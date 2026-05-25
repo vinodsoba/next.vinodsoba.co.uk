@@ -1,7 +1,7 @@
 "use client";
 
 import { Caveat } from "next/font/google";
-import { motion } from "framer-motion";
+import { easeIn, motion } from "framer-motion";
 import {
   Briefcase,
   BarChart3,
@@ -24,6 +24,7 @@ import {
   FiBarChart2,
   FiShoppingBag
 } from "react-icons/fi";
+import { once } from "events";
 
 const caveat = Caveat({
   subsets: ["latin"],
@@ -60,11 +61,18 @@ export default function WhyHire({ data }) {
     SEO: FiSearch,
   };
 
+  const transition = {
+    duration: 0.8,
+    delay: 0.2,
+    easeIn: [0, 0.71, 0.2, 1.01 ],
+
+  }
+
 
   
 
   return (
-    <section className="max-w-6xl mx-auto py-24 px-6 sm">
+    <section className="max-w-6xl mx-auto py-24 px-6 sm bg-[#fff]">
 
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
 
@@ -86,15 +94,33 @@ export default function WhyHire({ data }) {
           className="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.8)]"
         />
 
-          <p className="text-sm uppercase tracking-[0.2em] text-emerald-600 font-medium">
-            {data.eyebrow_text}
-          </p>
+        <motion.p
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.6,
+            ease: "easeOut",
+          }}
+          viewport={{ once: true }}
+          className="text-sm uppercase tracking-[0.2em] text-emerald-600 font-medium"
+        >{data.eyebrow_text}</motion.p>
 
         </div>
 
-          <h2 className="text-6xl lg:text-7xl font-bold leading-tight mb-6">
+          <motion.h2 
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{opacity: 1, y: 0 }}
+          transition={transition}
+          viewport={{ once: true }}
+          className="text-6xl lg:text-6xl font-bold leading-tight mb-6">
             <div dangerouslySetInnerHTML={{__html: data.title}} />
-          </h2>
+          </motion.h2>
 
           <p className="text-xl text-black font-bold mb-6">
             {data.subheading}

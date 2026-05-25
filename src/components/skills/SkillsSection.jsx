@@ -10,7 +10,7 @@ export default function SkillsSection({ skills }) {
   if (!skills.length) return null;
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-[#ffffff]">
       <div className="max-w-6xl mx-auto px-6">
 
 

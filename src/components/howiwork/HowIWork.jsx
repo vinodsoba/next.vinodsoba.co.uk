@@ -14,10 +14,10 @@ export default function HowIWork({
       <div className="mx-auto max-w-6xl px-6">
 
         {/* Title */}
-        <motion.h3
+        <motion.h2
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-2xl md:text-4xl font-semibold text-black mb-6"
+          className="text-5xl lg:text-5xl font-semibold text-black mb-6"
           dangerouslySetInnerHTML={{ __html: subTitle }}
         />
 
