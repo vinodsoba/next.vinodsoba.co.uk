@@ -41,14 +41,29 @@ export default async function ServicePage({
     <main className="bg-white text-black">
 
       {/* HERO */}
-      <section className="bg-black text-white py-24 text-center">
+      <section className="py-24 bg-black">
+
+      <div className="max-w-7xl mx-auto md:px-10 2xl:px-1">
+
         <h1
-          className="text-4xl md:text-6xl font-semibold"
+          className="text-5xl md:text-5xl font-semibold text-white leading-tight tracking-tight"
           dangerouslySetInnerHTML={{
-            __html: service?.title?.rendered || "",
+            __html: service.acf?.hero_heading_title || "",
           }}
         />
-      </section>
+
+        <p 
+        className="mt-6 max-w-2xl text-lg text-[#bfc3c9] leading-relaxed"
+        dangerouslySetInnerHTML={{
+            __html: service.acf?.hero_heading_subtitle || "",
+          }}
+          
+
+        />
+
+      </div>
+
+    </section>
 
       {/* IMAGE */}
 
@@ -66,7 +81,7 @@ export default async function ServicePage({
       {/* CONTENT */}
       <section className="py-20">
         <div
-          className="max-w-3xl mx-auto px-6 prose text-3xl align-left"
+          className="max-w-7xl mx-auto md:px-10 2xl:px-1 prose align-left text-4xl leading-11"
           dangerouslySetInnerHTML={{
             __html: service?.content?.rendered || "",
           }}

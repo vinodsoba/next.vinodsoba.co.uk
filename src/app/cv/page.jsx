@@ -2,11 +2,11 @@
 export default function CVPage() {
   return (
     <main className="bg-white text-slate-900">
-      <div className="max-w-4xl mx-auto px-8 py-12">
+      <div className="max-w-6xl mx-auto px-8 py-12 print:px-2 print:py-2 print:text-[12px]">
 
         {/* Header */}
-        <section className="mb-12">
-          <h1 className="text-5xl font-bold">Vinod Soba</h1>
+        <section className="mb-12 print:mb-2">
+          <h1 className="text-5xl print:text-4xl font-bold">Vinod Soba</h1>
           <p className="text-xl mt-2 text-slate-600">
             Front End Web Developer
           </p>
@@ -52,28 +52,29 @@ export default function CVPage() {
 
         {/* Summary */}
         <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-4">
+          <h2 className="text-2xl print:text-xl font-semibold mb-4">
             Professional Summary
           </h2>
 
-          <p className="leading-7 text-slate-700">
-            Front End Developer with 10+ years of experience building and maintaining responsive websites, ecommerce platforms, and CMS-driven applications. Experienced working with React, Next.js, JavaScript, WordPress, Magento, Tailwind CSS, and modern frontend workflows including Git and component-based development. Strong commercial background delivering production-ready websites, landing pages, and frontend solutions focused on user experience, performance, SEO, and conversion optimisation.
+          <p className="leading-7 print:leading-5 text-slate-700">
+            Frontend Developer specialising in responsive websites, ecommerce platforms, and modern user experiences across WordPress, Magento, and React-based applications. Experienced working with React, Next.js, JavaScript, WordPress, Magento, Tailwind CSS, and modern frontend workflows including Git and component-based development. Strong commercial background delivering production-ready websites, landing pages, and frontend solutions focused on user experience, performance, SEO, and conversion optimisation.
           </p>
         </section>
-        <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6">
+
+        <section className="mb-12 print:mb-2">
+        <h2 className="text-2xl print:text-xl font-semibold mb-6 print:mb-2">
             Technical Skills
         </h2>
 
-        <div className="space-y-6">
+        <div className="space-y-6 print:mb-10">
 
             {/* Frontend */}
             <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-3">
+            <h3 className="print:hidden text-sm font-semibold uppercase tracking-wide text-slate-500 mb-3">
                 Frontend
             </h3>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 print:hidden">
                 {[
                 "React",
                 "Next.js",
@@ -94,11 +95,11 @@ export default function CVPage() {
 
             {/* CMS & Ecommerce */}
             <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-3">
+            <h3 className="print:hidden text-sm font-semibold uppercase tracking-wide text-slate-500 mb-3">
                 CMS & Ecommerce
             </h3>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 print:hidden">
                 {[
                 "WordPress",
                 "Magento 2",
@@ -116,11 +117,11 @@ export default function CVPage() {
 
             {/* Tools */}
             <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-3">
+            <h3 className="print:hidden text-sm font-semibold uppercase tracking-wide text-slate-500 mb-3">
                 Tools
             </h3>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 print:hidden">
                 {[
                 "Git",
                 "GitHub",
@@ -140,11 +141,11 @@ export default function CVPage() {
 
             {/* Ecommerce & Analytics */}
             <div>
-                <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-3">
+                <h3 className="print:hidden text-sm font-semibold uppercase text-slate-500 ">
                     Ecommerce & Analytics
                 </h3>
 
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 print:hidden">
                     {[
                     "GA4",
                     "SEO",
@@ -161,20 +162,37 @@ export default function CVPage() {
                         {skill}
                     </span>
                     ))}
-                
+                </div>
             </div>
         </div>
-        </div>
-        </section>
-        <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6">
-            Work Experience
-        </h2>
 
-        <div className="border-l border-slate-200">
-            <div className="mb-12">
+        {/* print version */}
+        <div className="hidden print:block text-[11px] leading-4 text-slate-700">
 
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+            <p>
+                React • Next.js • JavaScript • HTML5 • CSS3 • Tailwind CSS
+            </p>
+
+            <p className="mt-2">
+                WordPress • Magento 2 • ACF
+            </p>
+
+            <p className="mt-2">
+                Git • GitHub • Node.js • Jira • Vagrant
+            </p>
+
+            <p className="mt-2">
+                GA4 • SEO • CRO • Responsive Design •
+                Performance Optimisation • A/B Testing • Ecommerce UX
+            </p>
+
+                <h2 className="print:mt-10 text-2xl print:text-xl font-semibold mb-6 print:mb-2">
+                    Work Experience
+                </h2>
+
+                {/* Print Addison Lee */}
+
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2 print:mb-5">
                     <div>
                         <h3 className="text-xl font-semibold">
                             Full Stack Developer
@@ -189,53 +207,167 @@ export default function CVPage() {
                     Oct 2022 — Present
                     </span>
                 </div>
+                <ul className="hidden print:block space-y-1 text-slate-700 leading-4 list-disc pl-5">
 
-                <p className="text-slate-700 leading-7 mb-6">
+                <li>
+                    Developed and maintained responsive websites, landing pages,
+                    and custom frontend templates using WordPress, ACF,
+                    JavaScript, PHP, HTML, and CSS.
+                </li>
+
+                <li>
+                    Built reusable frontend components focused on performance,
+                    responsive design, UX, and SEO optimisation.
+                </li>
+
+                <li>
+                    Managed staging and production deployments using Git-based
+                    workflows and collaborated with marketing teams and
+                    third-party developers to deliver website enhancements
+                    and digital campaigns.
+                </li>
+
+                <li>
+                    Integrated third-party tools including Freshdesk forms,
+                    chatbots, and lead-generation functionality while
+                    supporting local development environments using
+                    Node.js and Vagrant.
+                </li>
+
+                </ul>
+            {/* Print Y-Wilson */}
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10 print:mt-5 print:mb-5">
+                    
+                <div>
+                    <h3 className="text-xl font-semibold">
+                        Front End Developer
+                    </h3>
+
+                    <p className="text-slate-600">
+                        Y-Wilson
+                    </p>
+                </div>
+                <span className="text-sm text-slate-500 mt-2 md:mt-0">
+                    Jul 2022 — Oct 2022 
+                </span>
+
+                <p className="text-slate-700 leading-7 print:leading-5 mb-6 print:mb-2 print:mt-5">
+                Developed an interactive React-based Sudoku game focused on responsive
+                frontend functionality, reusable components, and cross-device usability.
+            </p>
+
+            <ul className="space-y-2 text-slate-700 leading-6 print:space-y-1 print:leading-4 list-disc pl-5">
+
+                <li>
+                Built reusable React components and interactive game functionality
+                using JavaScript and component-based architecture.
+                </li>
+
+                <li>
+                Developed timer logic, drag-and-drop interactions, and responsive
+                gameplay features across desktop and mobile devices.
+                </li>
+
+                <li>
+                Implemented responsive layouts and frontend interactions focused on
+                usability and smooth user experience.
+                </li>
+
+                <li>
+                Worked closely with stakeholders to deliver frontend functionality
+                and interactive user experiences.
+                </li>
+
+            </ul>
+            </div>
+           
+            </div>          
+            
+        </section>
+        <section className="mb-12 print:mb-6 print:hidden">
+        <h2 className="text-2xl print:text-xl font-semibold mb-6 print:mb-2">
+            Work Experience
+        </h2>
+
+        <div className="print:border-hidden">
+            <div className="mb-12 print:mb-6 border-b border-slate-200 pb-12">
+
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                    <div>
+                        <h3 className="text-xl font-semibold">
+                            Full Stack Developer
+                        </h3>
+
+                        <p className="text-slate-600">
+                            Addison Lee
+                        </p>
+                    </div>
+
+                    <span className="text-sm text-slate-500 mt-2 md:mt-0">
+                    Oct 2022 — May 2026
+                    </span>
+                </div>
+
+                <p className="text-slate-700 leading-7 print:leading-5 mb-6 print:mb-2">
                     Working across multiple company websites and digital platforms,
                     developing responsive frontend experiences, landing pages,
                     WordPress templates, and customer-focused web functionality.
                 </p>
 
-                <ul className="space-y-3 text-slate-700 leading-7 list-disc pl-5">
+                <ul className="space-y-2 text-slate-700 leading-6 print:hidden list-disc pl-5">
 
                 <li>
-                Developed and maintained responsive websites and landing pages
-                using WordPress, ACF, HTML, CSS, JavaScript, and PHP.
+                Developed and maintained responsive websites, landing pages, and custom frontend templates using WordPress, ACF, HTML, CSS, JavaScript, and PHP.
                 </li>
 
                 <li>
-                Built custom frontend templates and reusable website components
-                focused on performance, responsive design, and user experience.
+                Built reusable website components focused on performance, responsive design, user experience, and SEO optimisation.
                 </li>
 
                 <li>
-                Managed staging and production environments, testing and deploying
-                website updates and new functionality.
+                Managed staging and production deployments, implementing Git-based workflows to improve collaboration, code management, and release tracking.
                 </li>
 
                 <li>
-                Implemented Git-based version control workflows to improve
-                collaboration, deployment tracking, and code management.
+                Integrated third-party tools including Freshdesk forms and chatbot functionality to support customer engagement and lead generation.
                 </li>
 
                 <li>
-                Integrated third-party tools including Freshdesk forms and chatbot
-                functionality to improve customer engagement and lead generation.
+                Collaborated with marketing teams and third-party developers to deliver digital campaigns, website enhancements, and content updates using Jira-managed workflows.
                 </li>
 
                 <li>
-                Worked closely with marketing teams to deliver SEO-focused landing
-                pages, website campaigns, and content updates.
+                Supported local development environments using Node.js and Vagrant virtual machines.
+                </li>
+
+                </ul>
+
+                {/* for print */}
+                <ul className="hidden print:block space-y-1 text-slate-700 leading-4 list-disc pl-5">
+
+                <li>
+                    Developed and maintained responsive websites, landing pages,
+                    and custom frontend templates using WordPress, ACF,
+                    JavaScript, PHP, HTML, and CSS.
                 </li>
 
                 <li>
-                Coordinated development tasks with third-party developers using Jira
-                while acting as lead developer across website initiatives.
+                    Built reusable frontend components focused on performance,
+                    responsive design, UX, and SEO optimisation.
                 </li>
 
                 <li>
-                Supported local development environments using Node.js and Vagrant
-                virtual machines.
+                    Managed staging and production deployments using Git-based
+                    workflows and collaborated with marketing teams and
+                    third-party developers to deliver website enhancements
+                    and digital campaigns.
+                </li>
+
+                <li>
+                    Integrated third-party tools including Freshdesk forms,
+                    chatbots, and lead-generation functionality while
+                    supporting local development environments using
+                    Node.js and Vagrant.
                 </li>
 
                 </ul>
@@ -243,9 +375,9 @@ export default function CVPage() {
             </div>
         </div>
             {/* Y Wilson */}
-            <div className="mb-12 border-b border-slate-200 pb-12">
+            <div className="mb-12 print:mb-6 border-b border-slate-200 pb-12">
 
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2 print:mt-10">
                 <div>
                 <h3 className="text-xl font-semibold">
                     Front End Developer
@@ -261,12 +393,12 @@ export default function CVPage() {
                 </span>
             </div>
 
-            <p className="text-slate-700 leading-7 mb-6">
+            <p className="text-slate-700 leading-7 print:leading-5 mb-6 print:mb-2">
                 Developed an interactive React-based Sudoku game focused on responsive
                 frontend functionality, reusable components, and cross-device usability.
             </p>
 
-            <ul className="space-y-3 text-slate-700 leading-7 list-disc pl-5">
+            <ul className="space-y-2 text-slate-700 leading-6 print:space-y-1 print:leading-4 list-disc pl-5">
 
                 <li>
                 Built reusable React components and interactive game functionality
@@ -293,7 +425,7 @@ export default function CVPage() {
             </div>
 
             {/* Nteractive */}
-            <div className="mb-12 border-b border-slate-200 pb-12">
+            <div className="mb-12 print:mb-6 border-b border-slate-200 pb-12">
 
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
                 <div>
@@ -311,12 +443,12 @@ export default function CVPage() {
                 </span>
             </div>
 
-            <p className="text-slate-700 leading-7 mb-6">
+            <p className="text-slate-700 leading-7 print:leading-5 mb-6 print:mb-2">
                 Developed responsive event and campaign web experiences for global
                 brands including Gartner, Hewlett Packard, and New Balance.
             </p>
 
-            <ul className="space-y-3 text-slate-700 leading-7 list-disc pl-5">
+            <ul className="space-y-2 text-slate-700 leading-6 print:space-y-1 print:leading-4 list-disc pl-5">
 
                 <li>
                 Built and maintained responsive frontend event pages and branded
@@ -343,7 +475,7 @@ export default function CVPage() {
             </div>
 
             {/* Ocean Media Group*/}
-            <div className="mb-12 border-b border-slate-200 pb-12">
+            <div className="mb-12 print:mb-6 border-b border-slate-200 pb-12">
 
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
                 <div>
@@ -361,12 +493,12 @@ export default function CVPage() {
                 </span>
             </div>
 
-            <p className="text-slate-700 leading-7 mb-6">
+            <p className="text-slate-700 leading-7 print:leading-5 mb-6 print:mb-2">
                 Developed and maintained event websites, landing pages, and digital
                 campaign assets across multiple brands and content platforms.
             </p>
 
-            <ul className="space-y-3 text-slate-700 leading-7 list-disc pl-5">
+            <ul className="sspace-y-2 text-slate-700 leading-6 print:space-y-1 print:leading-4 list-disc pl-5">
 
                 <li>
                 Designed and developed responsive event websites and landing pages
@@ -398,7 +530,7 @@ export default function CVPage() {
             </div>
         
             {/* St Johns Labs */}
-            <div className="mb-12 border-b border-slate-200 pb-12">
+            <div className="mb-12 print:mb-6 border-b border-slate-200 pb-12">
 
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
                 <div>
@@ -416,12 +548,12 @@ export default function CVPage() {
                 </span>
             </div>
 
-            <p className="text-slate-700 leading-7 mb-6">
+            <p className="text-slate-700 leading-7 print:leading-5 mb-6 print:mb-2">
                 Worked on Magento ecommerce development, responsive frontend redesigns,
                 and performance optimisation across the company website and digital platforms.
             </p>
 
-            <ul className="space-y-3 text-slate-700 leading-7 list-disc pl-5">
+            <ul className="space-y-2 text-slate-700 leading-6 print:space-y-1 print:leading-4 list-disc pl-5">
 
                 <li>
                 Redesigned and developed responsive frontend pages including the
@@ -458,7 +590,7 @@ export default function CVPage() {
             </div>
 
             {/* Registry Trust */}
-            <div className="mb-12 border-b border-slate-200 pb-12">
+            <div className="mb-12 print:mb-6 border-b border-slate-200 pb-12">
 
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
                 <div>
@@ -476,7 +608,7 @@ export default function CVPage() {
                 </span>
             </div>
 
-            <ul className="space-y-3 text-slate-700 leading-7 list-disc pl-5">
+            <ul className="space-y-2 text-slate-700 leading-6 print:space-y-1 print:leading-4 list-disc pl-5">
 
                 <li>
                 Built and maintained multiple company websites using WordPress
@@ -498,7 +630,7 @@ export default function CVPage() {
             </div>
 
             {/* Regus */}
-            <div className="mb-12">
+            <div className="mb-12 print:mb-6">
 
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
                 <div>
@@ -516,7 +648,7 @@ export default function CVPage() {
                 </span>
             </div>
 
-            <ul className="space-y-3 text-slate-700 leading-7 list-disc pl-5">
+            <ul className="space-y-2 text-slate-700 leading-6 print:space-y-1 print:leading-4 list-disc pl-5">
 
                 <li>
                 Developed landing pages and microsites using ASP, HTML, CSS,
@@ -529,35 +661,243 @@ export default function CVPage() {
                 </li>
 
             </ul>
-
-            
-
         </div>
         </section>
         
 
-        <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6">
+        <section className="mb-12 print:mb-6">
+        {/* Print Nteractive */}
+        <div className="hidden print:block flex flex-col md:flex-row md:items-center md:justify-between mb-10 print:mt-5">
+                
+            <div>
+                <h3 className="text-xl font-semibold">
+                    Front End Developer
+                </h3>
+
+                <p className="text-slate-600">
+                    Nteractive
+                </p>
+            </div>
+            <span className="text-sm text-slate-500 mt-2 md:mt-5">
+                Oct 2021 — Jun 2022 
+            </span>
+
+            <p className="text-slate-700 leading-7 print:leading-5 mb-6 print:mb-2 print:mt-5">
+            Developed responsive event and campaign web experiences for global brands including Gartner, Hewlett Packard, and New Balance.
+            </p>
+
+        <ul className="space-y-2 text-slate-700 leading-6 print:space-y-1 print:leading-4 list-disc pl-5">
+
+            <li>
+            Built and maintained responsive frontend event pages and branded
+            digital experiences across multiple campaigns.
+            </li>
+
+            <li>
+            Developed interactive website elements and layouts using HTML,
+            CSS, JavaScript, and CMS platforms.
+            </li>
+
+            <li>
+            Collaborated with design and marketing teams to deliver engaging
+            user experiences and digital campaign assets.
+            </li>
+
+            <li>
+            Produced frontend visuals, animations, and branded web assets
+            aligned with client requirements and event campaigns.
+            </li>
+
+        </ul>
+        </div>
+
+        {/* Print Ocean Media Group */}
+        <div className="hidden print:block flex flex-col md:flex-row md:items-center md:justify-between mb-10 print:mt-5">
+                    
+            <div>
+                <h3 className="text-xl font-semibold">
+                    Front End Developer
+                </h3>
+
+                <p className="text-slate-600">
+                    Ocean Media Group
+                </p>
+            </div>
+            <span className="text-sm text-slate-500 mt-2 md:mt-0">
+                Oct 2019 — Sep 2021 
+            </span>
+
+            <p className="text-slate-700 leading-7 print:leading-5 mb-6 print:mb-2 print:mt-5">
+                Developed and maintained event websites, landing pages, and digital
+                campaign assets across multiple brands and content platforms.
+            </p>
+
+            <ul className="space-y-2 text-slate-700 leading-6 print:space-y-1 print:leading-4 list-disc pl-5">
+                <li>
+                Designed and developed responsive event websites and landing pages
+                focused on user experience and campaign performance.
+                </li>
+
+                <li>
+                Built and maintained WordPress themes and templates using
+                Advanced Custom Fields (ACF).
+                </li>
+
+                <li>
+                Worked across multiple CMS platforms delivering frontend updates,
+                content integrations, and website improvements.
+                </li>
+
+                <li>
+                Collaborated with marketing and design teams to deliver digital
+                campaigns, email assets, and branded web experiences.
+                </li>
+
+                <li>
+                Developed frontend layouts and interactive website elements using
+                HTML, CSS, JavaScript, and jQuery.
+                </li>
+            </ul>
+        </div>
+
+        {/* Print St John's Laboratory Ltd */}
+        <div className="hidden print:block flex flex-col md:flex-row md:items-center md:justify-between mb-10 print:mt-5">
+                    
+            <div>
+                <h3 className="text-xl font-semibold">
+                   Full Stack Developer
+                </h3>
+
+                <p className="text-slate-600">
+                    St John’s Laboratory Ltd
+                </p>
+            </div>
+            <span className="text-sm text-slate-500 mt-2 md:mt-0">
+                Sep 2018 — Sep 2019 
+            </span>
+
+            <p className="text-slate-700 leading-7 print:leading-5 mb-6 print:mb-2">
+                Worked on Magento ecommerce development, responsive frontend redesigns, and performance optimisation across the company website and digital platforms.
+            </p>
+
+            <ul className="space-y-2 text-slate-700 leading-6 print:space-y-1 print:leading-4 list-disc pl-5">
+                <li>
+                Redesigned and developed responsive frontend pages including the
+                homepage, antibody validation pages, and blog layouts.
+                </li>
+
+                <li>
+                Supported the migration of the company ecommerce platform from
+                Magento 1.9 and helped establish staging environments for testing
+                and deployment workflows.
+                </li>
+
+                <li>
+                Analysed, debugged, and tested frontend and backend functionality
+                across staging and production environments.
+                </li>
+
+                <li>
+                Built responsive layouts and interactive website functionality using
+                Bootstrap, JavaScript, jQuery, HTML, and CSS.
+                </li>
+
+                <li>
+                Optimised database queries and website performance to improve
+                page speed and overall user experience.
+                </li>
+
+                <li>
+                Managed website administration, user permissions, and regular
+                website/database maintenance.
+                </li>
+            </ul>
+        </div>
+
+        {/* Print Registry Trust */}
+        <div className="hidden print:block flex flex-col md:flex-row md:items-center md:justify-between mb-10 print:mt-5">
+                    
+            <div>
+                <h3 className="text-xl font-semibold">
+                   Senior Full Stack Developer
+                </h3>
+
+                <p className="text-slate-600">
+                    Registry Trust Ltd
+                </p>
+            </div>
+            <span className="text-sm text-slate-500 mt-2 md:mt-0">
+                Nov 2013 — Aug 2018 
+            </span>
+
+            <ul className="space-y-2 text-slate-700 leading-6 print:space-y-1 print:leading-4 list-disc pl-5">
+                <li>
+                Built and maintained multiple company websites using WordPress
+                and Joomla within an Agile development environment.
+                </li>
+
+                <li>
+                Developed portal functionality to dynamically display client
+                shareholdings, investments, and reporting data.
+                </li>
+
+                <li>
+                Led and supported digital projects while mentoring and managing
+                junior developers.
+                </li>
+            </ul>
+        </div>
+        
+        {/* Print Regus */}
+        <div className="hidden print:block flex flex-col md:flex-row md:items-center md:justify-between mb-10 print:mt-5">
+                    
+            <div>
+                <h3 className="text-xl font-semibold">
+                   Web Developer
+                </h3>
+
+                <p className="text-slate-600">
+                    Regus
+                </p>
+            </div>
+            <span className="text-sm text-slate-500 mt-2 md:mt-0">
+                Mar 2011 — Oct 2013 
+            </span>
+
+            <ul className="space-y-2 text-slate-700 leading-6 print:space-y-1 print:leading-4 print:mt-5 list-disc pl-5">
+                <li>
+                Developed landing pages and microsites using ASP, HTML, CSS,
+                and MySQL.
+                </li>
+
+                <li>
+                Maintained company websites, resolved frontend issues, and
+                deployed website updates across digital platforms.
+                </li>
+            </ul>
+        </div>
+        
+        <h2 className="text-2xl print:text-xl font-semibold mb-6 print:mb-2">
             Selected Projects
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 print:grid-cols-2 gap-6 gap-6 print:gap-3 print:p-2 print:gap-4">
 
             {/* card */}
 
-            <div className="border border-slate-200 rounded-2xl p-6 h-full flex flex-col hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+            <div className="border border-slate-200 rounded-2xl p-6 print:p-2 break-inside-avoid h-full flex flex-col hover:-translate-y-1 hover:shadow-lg transition-all duration-300 print:p-4">
 
             <h3 className="text-xl font-semibold mb-2">
                 Addison Lee Digital Platform
             </h3>
 
-            <p className="text-slate-600 leading-7 mb-6">
+            <p className="text-slate-600 leading-6 mb-4 print:text-[10px] print:leading-3">
                 Frontend development and website management across multiple
                 company websites, landing pages, and customer-facing digital
                 experiences.
             </p>
 
-            <ul className="space-y-2 text-slate-700 leading-7 list-disc pl-5 mb-6">
+            <ul className="space-y-2 text-slate-700 leading-6 list-disc pl-5 mb-6 print:mb-2 print:hidden">
 
                 <li>
                 Developed responsive landing pages and custom WordPress templates.
@@ -584,7 +924,7 @@ export default function CVPage() {
 
             </ul>
 
-            <div className="flex flex-wrap gap-3 mb-6">
+            <div className="flex flex-wrap gap-3 mb-6 print:mb-2 print:hidden">
                 {[
                 "WordPress",
                 "ACF",
@@ -603,7 +943,7 @@ export default function CVPage() {
                 ))}
             </div>
 
-            <div className="mt-auto">
+            <div className="mt-auto print:hidden">
                 <a
                 href="https://www.addisonlee.com"
                 target="_blank"
@@ -616,19 +956,19 @@ export default function CVPage() {
 
             </div>
 
-            <div className="border border-slate-200 rounded-2xl p-6 h-full flex flex-col hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+            <div className="border border-slate-200 rounded-2xl p-6 print:p-3 break-inside-avoid h-full flex flex-col hover:-translate-y-1 hover:shadow-lg transition-all duration-300 print:p-2">
 
             <h3 className="text-xl font-semibold mb-2">
                 Ocean Media Event Platforms
             </h3>
 
-            <p className="text-slate-600 leading-7 mb-6">
+            <p className="text-slate-600 leading-6 mb-4 print:text-[10px] print:leading-3">
                 Frontend development and digital campaign work across multiple
                 event and media brands, delivering responsive websites,
                 landing pages, and marketing-focused user experiences.
             </p>
 
-            <ul className="space-y-2 text-slate-700 leading-7 list-disc pl-5 mb-6">
+            <ul className="space-y-2 text-slate-700 leading-6 list-disc pl-5 mb-6 print:mb-2 print:hidden">
 
                 <li>
                 Developed responsive event websites and campaign landing pages
@@ -657,7 +997,7 @@ export default function CVPage() {
 
             </ul>
 
-            <div className="flex flex-wrap gap-3 mb-6">
+            <div className="flex flex-wrap gap-3 mb-6 print:mb-2 print:hidden">
                 {[
                 "WordPress",
                 "ACF",
@@ -676,7 +1016,7 @@ export default function CVPage() {
                 ))}
             </div>
 
-            <div className="mt-auto">
+            <div className="mt-auto print:hidden">
                 <a
                 href="https://www.nationalweddingshow.co.uk"
                 target="_blank"
@@ -689,7 +1029,7 @@ export default function CVPage() {
 
             </div>
 
-            <div className="border border-slate-200 rounded-2xl p-6 hover:border-slate-300 transition">
+            <div className="border border-slate-200 rounded-2xl p-6 print:p-2 break-inside-avoid hover:border-slate-300 transition print:p-2">
 
             <div className="flex items-start justify-between mb-4">
 
@@ -698,7 +1038,7 @@ export default function CVPage() {
                     BeautyBop Ecommerce Platform
                 </h3>
 
-                <p className="text-slate-600 leading-7">
+                <p className="text-slate-600 leading-6 mb-4 print:text-[10px] print:leading-3">
                     Magento 2 ecommerce platform focused on frontend UX,
                     SEO optimisation, responsive design, and ecommerce
                     performance improvements.
@@ -707,7 +1047,7 @@ export default function CVPage() {
 
             </div>
 
-            <ul className="space-y-2 text-slate-700 leading-7 list-disc pl-5 mb-6">
+            <ul className="space-y-2 text-slate-700 leading-6 list-disc pl-5 mb-6 print:mb-2 print:hidden">
 
                 <li>
                 Developed and maintained Magento frontend features and
@@ -730,7 +1070,7 @@ export default function CVPage() {
 
             </ul>
 
-            <div className="flex flex-wrap gap-3 mb-6">
+            <div className="flex flex-wrap gap-3 mb-6 print:mb-2 print:hidden">
                 {[
                 "Magento 2",
                 "JavaScript",
@@ -759,19 +1099,19 @@ export default function CVPage() {
 
             </div>
 
-            <div className="border border-slate-200 rounded-2xl p-6 hover:border-slate-300 transition">
+            <div className="border border-slate-200 rounded-2xl p-6 print:p-2 break-inside-avoid hover:border-slate-300 transition print:p-2">
 
             <h3 className="text-xl font-semibold mb-2">
                 React Sudoku Game
             </h3>
 
-            <p className="text-slate-600 leading-7 mb-6">
+            <p className="text-slate-600 leading-6 mb-4 print:text-[10px] print:leading-3">
                 Interactive Sudoku game built using React with responsive
                 gameplay, reusable components, drag-and-drop functionality,
                 and timer-based game logic.
             </p>
 
-            <ul className="space-y-2 text-slate-700 leading-7 list-disc pl-5 mb-6">
+            <ul className="space-y-2 text-slate-700 leading-6 list-disc pl-5 mb-6 print:mb-2 print:hidden">
 
                 <li>
                 Built reusable React components and dynamic frontend interactions.
@@ -787,7 +1127,7 @@ export default function CVPage() {
 
             </ul>
 
-            <div className="flex flex-wrap gap-3 mb-6">
+            <div className="flex flex-wrap gap-3 mb-6 print:mb-2 print:hidden">
                 {[
                 "React",
                 "JavaScript",
@@ -814,19 +1154,19 @@ export default function CVPage() {
 
             </div>
 
-            <div className="border border-slate-200 rounded-2xl p-6 hover:border-slate-300 transition">
+            <div className="border border-slate-200 rounded-2xl p-6 print:p-2 break-inside-avoid hover:border-slate-300 transition print:p-2">
 
             <h3 className="text-xl font-semibold mb-2">
                 Personal Portfolio Website
             </h3>
 
-            <p className="text-slate-600 leading-7 mb-6">
+            <p className="text-slate-600 leading-6 mb-4 print:text-[10px] print:leading-3">
                 Modern portfolio website built using Next.js, Tailwind CSS,
                 and headless WordPress architecture to showcase frontend
                 development projects and technical capabilities.
             </p>
 
-            <div className="flex flex-wrap gap-3 mb-6">
+            <div className="flex flex-wrap gap-3 mb-6 print:mb-2 print:hidden">
                 {[
                 "Next.js",
                 "React",
@@ -860,13 +1200,13 @@ export default function CVPage() {
         </section>
 
         {/* Education & Interest Section */}
-        <section className="mb-12">
+        <section className="mb-12 print:mb-6">
 
-            <h2 className="text-2xl font-semibold mb-6">
+            <h2 className="text-2xl print:text-xl font-semibold mb-6 print:mb-2">
                 Education
             </h2>
 
-        <div className="border border-slate-200 rounded-2xl p-6">
+        <div className="border border-slate-200 rounded-2xl p-6 print:p-2 break-inside-avoid print:p-2">
 
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
 
@@ -890,13 +1230,13 @@ export default function CVPage() {
 
         </section>
 
-        <section className="mb-12">
+        <section className="mb-12 print:mb-6 print:hidden">
 
-            <h2 className="text-2xl font-semibold mb-6">
+            <h2 className="text-2xl print:text-xl font-semibold mb-6 print:mb-2">
                 Interests
             </h2>
 
-        <p className="text-slate-700 leading-7">
+        <p className="text-slate-700 leading-7 print:text-[10px]print:leading-3">
             Passionate about frontend development, ecommerce UX,
             responsive web design, and modern JavaScript frameworks.
             Outside of development, interests include fitness,
@@ -906,7 +1246,7 @@ export default function CVPage() {
         </section>
 
         {/* Footer */}
-        <footer className="pt-12 border-t border-slate-200 text-sm text-slate-500">
+        <footer className="pt-12 border-t border-slate-200 text-sm text-slate-500 print:hidden">
 
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
 
@@ -952,7 +1292,7 @@ export default function CVPage() {
         </footer>
 
       </div>
-      
+
     </main>
   );
 }

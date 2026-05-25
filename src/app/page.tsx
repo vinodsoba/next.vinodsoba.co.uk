@@ -20,11 +20,15 @@ export default async function Home() {
     skills = skillsData || [];
     homepage = homepageData || null;
 
+
   } catch (error) {
     console.error("Homepage data fetch failed:", error);
   }
 
   const acf = homepage?.acf ?? {};
+
+  console.log('data object', acf);
+
 
   return (
     <main>
@@ -50,7 +54,7 @@ export default async function Home() {
       {/* SKILLS */}
       <SkillsSection skills={(skills || []) as any} />
 
-      <WhyHireMe acf={acf}/>
+      <WhyHireMe data={acf}/>
 
     </main>
   );
