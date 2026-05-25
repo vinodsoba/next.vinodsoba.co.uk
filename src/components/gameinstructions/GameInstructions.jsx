@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 export default function GameInstructions({ 
   hasDropped, 
-  cameraXRef,
   playerX
 }) {
+
 
   const messages = [
     {
@@ -50,17 +50,17 @@ export default function GameInstructions({
     <motion.div
       key={message.id}
       style={{
-      left: message.x - cameraXRef.current,
-      top: message.y,
+        left: "10%",
+        top: "120px",
       }}
-      initial={{ opacity: 0, y: -20, scale: 0.95 }}
+      initial={{ opacity: 0, y: 200, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.6 }}
-      className={`absolute left-1/2 top-28 z-30 -translate-x-1/2 rounded-3xl border px-6 py-4 text-center shadow-2xl backdrop-blur-md transition-all duration-700
-        ${
+      className={`absolute left-1/2 -translate-x-1/2" z-30 rounded-3xl border px-6 py-4 text-center shadow-2xl backdrop-blur-md transition-all duration-700
+         ${
           hasDropped
-        ? "border-black/20 bg-black/70 text-white"
-        : "border-white/20 bg-white/10 text-white"
+            ? "border-black/20 bg-black/70 text-white"
+            : "border-white/20 bg-white/10 text-white"
         }
       `}
     >

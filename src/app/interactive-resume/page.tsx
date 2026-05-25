@@ -446,7 +446,17 @@ export default function ResumeGamePage() {
         {pods.map((pod, index) => (
           <div
             key={index}
-            className="absolute rounded-full bg-cyan-400"
+            className=" absolute
+            top-10
+            right-20
+            w-40
+            h-40
+            rounded-full
+            bg-gradient-to-br
+            from-yellow-200
+            via-yellow-300
+            to-orange-400
+            shadow-[0_0_120px_rgba(255,220,100,0.6)]"
             style={{
               left: pod.x - cameraXRef.current,
               top: pod.y,
@@ -493,7 +503,6 @@ export default function ResumeGamePage() {
         </div>           
 
         <GameInstructions  
-        cameraXRef={cameraXRef}  
         hasDropped={hasDropped}
         playerX={playerX}
         />     

@@ -78,11 +78,11 @@ function HeroBanner({
         "
       >
         <h1
-          className="mb-6 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white"
+          className="mb-6 text-4xl lg:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white"
           dangerouslySetInnerHTML={{ __html: title }}
         />
 
-        <h4 className="mb-8 max-w-2xl text-lg text-white md:text-2xl">
+        <h4 className="mb-8 max-w-2xl lg:text-lg text-white md:text-2xl">
           {subtitle}
         </h4>
 
@@ -95,9 +95,6 @@ function HeroBanner({
         </Link>
         </div>
       </motion.div>
-
-      {/* Fade to next section */}
-      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-b from-transparent via-black/10 to-white z-[2]" />
     </section>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CodePanel from "../codepanel/CodePanel";
+import { motion } from "framer-motion";
 
 export default function TabView({ tabs = [] }) {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -14,7 +15,12 @@ console.log(tabs);
     <div className="w-full">
 
       {/* Tabs Row */}
-      <div className="overflow-x-auto">
+      <motion.div
+      className="overflow-x-auto"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      >
+
         <div className="flex gap-6 px-4 md:px-0 w-max md:w-full justify-end">
           {tabs.map((tab, index) => (
             <div
@@ -40,21 +46,22 @@ console.log(tabs);
               
             </div>
           ))}
-        </div>
+        
       </div>
-
+      </motion.div>
+     
       {/* Content Section */}
       <div className="grid lg:grid-cols-2 gap-16 items-center">
 
         {/* Code Panel */}
-        <div className="w-full">
+        <div className="w-[80%] lg:w-full">
           <CodePanel
             code={tabs[activeTabIndex].code}
           />
         </div>
 
         {/* Content */}
-        <div className="prose prose-lg max-w-none text-slate-600 leading-8">
+        <div className="prose prose-lg  w-[80%] lg:w-full text-slate-600 leading-8">
           {tabs[activeTabIndex].content}
         </div>        
 
