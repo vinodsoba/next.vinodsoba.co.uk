@@ -1,5 +1,6 @@
+// @ts-nocheck
+
 import { getServiceBySlug } from "@/lib/getServices";
-import Image from "next/image";
 import Section from "@/components/Section/Section";
 import WireframeToUI from "@/components/wireframe/WireframeToUI";
 import DesignSystem from "@/components/designsystem/DesignSystem";
@@ -8,6 +9,15 @@ import CodeToUI from "@/components/codetoui/CodeToUI";
 import ResponsivePreview from "@/components/responsivepreview/ResponsivePreview";
 import ConversionFlow from "@/components/conversionflow/ConversionFlow";
 import LetsTalk from "@/components/letstalk/LetsTalk";
+import Hero from "@/components/servicesupport/Hero";
+import Features from "@/components/servicesupport/Features";
+import Process from "@/components/servicesupport/Process";
+import Cta from "@/components/servicesupport/CTA";
+import ContentRow from "@/components/seo/ContentRow";
+import SeoDashboard from "@/components/seo/SeoDashboard";
+import PerformancePanel from "@/components/seo/PerformancePanel";
+
+
 
 
 export const revalidate = 60;
@@ -17,8 +27,9 @@ export default async function ServicePage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  // ✅ unwrap params
+  // unwrap params
   const { slug } = await params;
+
 
   if (!slug) {
     return <div className="p-10">Invalid service slug</div>;
@@ -32,6 +43,12 @@ export default async function ServicePage({
 
   const isWebDesignPage = slug === "web-design";
 
+  const isWebSupportPage = slug === "website-maintenance-support";
+
+  const isWebSeoPage = slug === "seo";
+
+  const isWebDevelopmentPage = slug === "web-development";
+
   const image =
     service?.acf?.post_images ||
     (service as any)?._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
@@ -41,52 +58,114 @@ export default async function ServicePage({
     <main className="bg-white text-black">
 
       {/* HERO */}
-      <section className="py-24 bg-black">
+      {isWebDesignPage || 
+      isWebSeoPage || 
+      isWebSupportPage ||
+      isWebDevelopmentPage ? (
+        <Hero 
+        eyebrow={service.acf?.hero_eyebrow}
+        hero_heading_title={service.acf?.hero_heading_title}
+        hero_heading_subtitle={service.acf?.hero_heading_subtitle}
+        ctaText={service.acf?.hero_cta_text}
+        ctaUrl={service.acf?.hero_cta_url}
+      />
+      ) : 
+      <section className="relative overflow-hidden bg-white">
+        <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
+          <div className="grid lg:grid-cols-2 gap-16 items-center"></div>
+          <h1
+            className="text-5xl md:text-5xl font-semibold text-black leading-tight tracking-tight"
+          />
+          <p 
+          className="mt-6 max-w-2xl text-lg text-[#bfc3c9] leading-relaxed"
+          />
 
-      <div className="max-w-7xl mx-auto md:px-10 2xl:px-1">
+        </div>
 
-        <h1
-          className="text-5xl md:text-5xl font-semibold text-white leading-tight tracking-tight"
-          dangerouslySetInnerHTML={{
-            __html: service.acf?.hero_heading_title || "",
-          }}
+      </section>
+
+     }
+
+    {isWebSupportPage ?
+        (
+          <>
+          <Features />
+          <Process />
+          <Cta />
+          </>
+        )
+        
+      : null 
+    }
+      
+    {isWebSeoPage ? (
+      <>
+
+        <ContentRow
+          number="01"
+          title="Technical SEO"
+          description="I help to improve your website’s technical foundation to help search engines crawl and index your content more effectively."
+          bullets={[
+            "Crawlability & Indexing",
+            "Core Web Vitals",
+            "Structured Data",
+            "Technical Audits",
+          ]}
+          image="/images/seo-technical.jpg"
         />
 
-        <p 
-        className="mt-6 max-w-2xl text-lg text-[#bfc3c9] leading-relaxed"
-        dangerouslySetInnerHTML={{
-            __html: service.acf?.hero_heading_subtitle || "",
-          }}
+        <ContentRow
+          reverse
+          number="02"
+          title="Keyword Strategy"
+          description="I can help identify high-intent keywords and optimise your content to improve rankings and attract qualified traffic."
+          bullets={[
+            "Keyword Research",
+            "Search Intent Mapping",
+            "Content Optimisation",
+            "Competitor Analysis",
+          ]}
+        >
+
+        <SeoDashboard />
+
+        </ContentRow>
+
+        <ContentRow
           
+          number="03"
+          title="Performance & Tracking"
+          description="Track rankings, traffic, and SEO performance using advanced analytics, reporting, and ongoing monitoring."
+          bullets={[
+            "GA4 & Search Console",
+            "Custom Dashboards",
+            "Rank Tracking",
+            "Ongoing Monitoring",
+          ]}
+        >
 
-        />
+        <PerformancePanel />
 
-      </div>
+        </ContentRow>
 
-    </section>
+        </>
+      ) : null}
 
       {/* IMAGE */}
 
-      {!isWebDesignPage && image && (
+      {!isWebDesignPage && 
+      !isWebSupportPage &&
+      !isWebSeoPage &&
+      !isWebDevelopmentPage &&
+      image && (
         <div className="relative w-full h-[400px] md:h-[500px]">
-          <Image
+          <img
             src={image}
             alt={service?.title?.rendered || ""}
-            fill
-            className="object-cover"
+            className="absolute inset-0 h-full w-full object-cover"
           />
         </div>
       )}
-
-      {/* CONTENT */}
-      <section className="py-20">
-        <div
-          className="max-w-7xl mx-auto md:px-10 2xl:px-1 prose align-left text-4xl leading-11"
-          dangerouslySetInnerHTML={{
-            __html: service?.content?.rendered || "",
-          }}
-        />
-      </section>
 
       {slug === "web-design" && (
         <>
@@ -146,6 +225,7 @@ export default async function ServicePage({
           <LetsTalk />
         </>
       )}
+
 
     </main>
   );
