@@ -10,7 +10,20 @@ const nextConfig: NextConfig = {
       permanent: true,
     },
   ];
-}
+},
+
+ images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "vinod-soba.co.uk",
+      },
+      {
+        protocol: "https",
+        hostname: "www.vinod-soba.co.uk",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

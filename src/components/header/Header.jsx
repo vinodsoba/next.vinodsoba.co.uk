@@ -12,17 +12,22 @@ import { usePathname } from "next/navigation";
  *     title: string;
  *     url: string;
  *   }[];
+ * 
+ * 
  * }} props
  */
 
 
-export default function Header({ menuItems = [], variant = "light"  }) {
+export default function Header({ menuItems = [], }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const pathname = usePathname();
 
-   const isLightPage = pathname === "/contact";
+  const isLightPage =
+  pathname === "/contact" ||
+  pathname.startsWith("/services");
+   
 
   // Detect scroll
   useEffect(() => {
@@ -42,7 +47,7 @@ export default function Header({ menuItems = [], variant = "light"  }) {
           fixed w-full z-50 px-6 py-5 transition-all duration-300
           ${
           isLightPage
-            ? "bg-black/90 backdrop-blur-md shadow text-slate-900"
+            ? "bg-black shadow-md text-white"
             : scrolled
             ? "bg-black shadow-md text-white"
             : "bg-transparent text-white"
