@@ -163,7 +163,7 @@ export default async function WorkPage() {
 
                     {/* WEBSITE */}
                     <Link
-                      href={portfolio?.acf?.website_url || "#"}
+                      href={portfolio?.acf?.cta_url || "#"}
                       target="_blank"
                       className="
                         inline-flex
@@ -182,7 +182,7 @@ export default async function WorkPage() {
                       "
                     >
 
-                      Visit Website
+                      {portfolio?.acf?.cta_text || "Visit Website"}
 
                     </Link>
 
