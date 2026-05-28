@@ -11,7 +11,7 @@ export default function CVPage() {
             Front End Web Developer
           </p>
           <div className="py-2 flex flex-wrap gap-3 text-sm text-slate-500 items-center">
-            <p>London, UK</p>
+            <p>Maidenhead, UK</p>
             <span>•</span>
             <p>07983 450 717</p>
             <span>•</span>
@@ -62,7 +62,7 @@ export default function CVPage() {
         </section>
 
         <section className="mb-12 print:mb-2">
-        <h2 className="text-2xl print:text-xl font-semibold mb-6 print:mb-2">
+        <h2 className="text-2xl print:text-xl font-semibold mb-6 print:mb-2 print:h-1">
             Technical Skills
         </h2>
 
@@ -85,7 +85,7 @@ export default function CVPage() {
                 ].map((skill) => (
                 <span
                     key={skill}
-                    className="px-4 py-2 bg-slate-100 rounded-full text-sm font-medium"
+                    className="px-4 py-2 bg-slate-100 rounded-full text-sm print:text-md font-medium"
                 >
                     {skill}
                 </span>
@@ -167,7 +167,7 @@ export default function CVPage() {
         </div>
 
         {/* print version */}
-        <div className="hidden print:block text-[11px] leading-4 text-slate-700">
+        <div className="hidden print:block print:text-[12px] leading-4 text-slate-700">
 
             <p>
                 React • Next.js • JavaScript • HTML5 • CSS3 • Tailwind CSS
@@ -198,13 +198,13 @@ export default function CVPage() {
                             Full Stack Developer
                         </h3>
 
-                        <p className="text-slate-600">
+                        <p className="text-slate-600 print:text-[14px]">
                             Addison Lee
                         </p>
                     </div>
 
                     <span className="text-sm text-slate-500 mt-2 md:mt-0">
-                    Oct 2022 — Present
+                    Oct 2022 — May 2026
                     </span>
                 </div>
                 <ul className="hidden print:block space-y-1 text-slate-700 leading-4 list-disc pl-5">
@@ -243,7 +243,7 @@ export default function CVPage() {
                         Front End Developer
                     </h3>
 
-                    <p className="text-slate-600">
+                    <p className="text-slate-600 print:text-[14px]">
                         Y-Wilson
                     </p>
                 </div>
@@ -674,7 +674,7 @@ export default function CVPage() {
                     Front End Developer
                 </h3>
 
-                <p className="text-slate-600">
+                <p className="text-slate-600 print:text-[14px]">
                     Nteractive
                 </p>
             </div>
@@ -719,7 +719,7 @@ export default function CVPage() {
                     Front End Developer
                 </h3>
 
-                <p className="text-slate-600">
+                <p className="text-slate-600 print:text-[14px]">
                     Ocean Media Group
                 </p>
             </div>
@@ -768,7 +768,7 @@ export default function CVPage() {
                    Full Stack Developer
                 </h3>
 
-                <p className="text-slate-600">
+                <p className="text-slate-600 print:text-[14px]">
                     St John’s Laboratory Ltd
                 </p>
             </div>
@@ -776,7 +776,7 @@ export default function CVPage() {
                 Sep 2018 — Sep 2019 
             </span>
 
-            <p className="text-slate-700 leading-7 print:leading-5 mb-6 print:mb-2">
+            <p className="text-slate-700 leading-7 print:leading-5 mb-6 print:mb-2 print:mt-5">
                 Worked on Magento ecommerce development, responsive frontend redesigns, and performance optimisation across the company website and digital platforms.
             </p>
 
@@ -822,7 +822,7 @@ export default function CVPage() {
                    Senior Full Stack Developer
                 </h3>
 
-                <p className="text-slate-600">
+                <p className="text-slate-600 print:text-[14px]">
                     Registry Trust Ltd
                 </p>
             </div>
@@ -830,7 +830,7 @@ export default function CVPage() {
                 Nov 2013 — Aug 2018 
             </span>
 
-            <ul className="space-y-2 text-slate-700 leading-6 print:space-y-1 print:leading-4 list-disc pl-5">
+            <ul className="space-y-2 text-slate-700 leading-6 print:space-y-1 print:leading-4 list-disc pl-5 print:mt-5">
                 <li>
                 Built and maintained multiple company websites using WordPress
                 and Joomla within an Agile development environment.
@@ -856,7 +856,7 @@ export default function CVPage() {
                    Web Developer
                 </h3>
 
-                <p className="text-slate-600">
+                <p className="text-slate-600 print:text-[14px]">
                     Regus
                 </p>
             </div>
@@ -1219,10 +1219,6 @@ export default function CVPage() {
                 University of West London
                 </p>
             </div>
-
-            <span className="text-sm text-slate-500 mt-2 md:mt-0">
-                2006
-            </span>
 
             </div>
 

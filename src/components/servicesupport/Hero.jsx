@@ -8,12 +8,20 @@ export default function Hero({
   hero_heading_subtitle,
   ctaText,
   ctaUrl,
+  badges=[],
+  isDark = false,
   //image,
 }) {
 
   return (
 
-    <section className="relative overflow-hidden bg-white">
+    <section 
+    className={`relative overflow-hidden ${
+      isDark 
+      ? "bg-black text-white" 
+      : "bg-whitectext-black"}
+      `}
+      >
 
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
 
@@ -31,7 +39,11 @@ export default function Hero({
 
             {/* Heading */}
            <h1
-            className="mt-6 text-5xl md:text-7xl font-semibold leading-tight tracking-tight text-black"
+            className={`mt-6 text-5xl md:text-7xl font-semibold leading-tight tracking-tight ${
+              isDark 
+              ? "text-white"
+              : "text-black"            
+            }`}
             dangerouslySetInnerHTML={{
               __html: hero_heading_title || "",
             }}
@@ -63,6 +75,35 @@ export default function Hero({
               </Link>
 
             </div>
+            {/* TECH STACK BADGES */}
+            {badges.length > 0 && (
+
+              <div className="mt-8 flex flex-wrap gap-3">
+
+                {badges.map((badge, index) => (
+
+                  <div
+                    key={index}
+                    className="
+                      rounded-2xl
+                      border border-white/10
+                      bg-white/5
+                      px-4 py-2
+                      text-sm font-medium
+                      text-white
+                      backdrop-blur-md
+                    "
+                  >
+
+                    {badge}
+
+                  </div>
+
+                ))}
+
+              </div>
+
+            )}
 
           </div>
 

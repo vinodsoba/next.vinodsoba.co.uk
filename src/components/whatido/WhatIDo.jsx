@@ -57,7 +57,7 @@ export default function WhatIDo({ acf }) {
             <img
               src={acf.about_me_background_image}
               alt=""
-              className="w-full h-auto rounded-lg"
+              className="max-w-sm h-auto rounded-lg"
             />
           </motion.div>
 
