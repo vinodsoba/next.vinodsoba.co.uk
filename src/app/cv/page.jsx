@@ -943,15 +943,19 @@ export default function CVPage() {
                 ))}
             </div>
 
-            <div className="mt-auto print:hidden">
+            <div className="mt-auto flex justify-between">
+                <span className="mb-2">https://www.addisonlee.com</span>
                 <a
                 href="https://www.addisonlee.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-medium hover:underline"
                 >
+
+
                 View Website →
                 </a>
+                
             </div>
 
             </div>
@@ -1016,14 +1020,15 @@ export default function CVPage() {
                 ))}
             </div>
 
-            <div className="mt-auto print:hidden">
+            <div className="mt-auto flex justify-between">
+                <span className="mb-2">https://nationalweddingshow.co.uk</span>
                 <a
                 href="https://www.nationalweddingshow.co.uk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-medium hover:underline"
                 >
-                View Project →
+                View Website →
                 </a>
             </div>
 
@@ -1087,49 +1092,51 @@ export default function CVPage() {
                 </span>
                 ))}
             </div>
-
-            <a
+               <div className="mt-auto flex justify-between">
+                <span className="mb-2">https://www.beautybop.co.uk</span>
+               
+                <a
                 href="https://www.beautybop.co.uk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-medium hover:underline"
-            >
-                View Project →
-            </a>
+                >
+                    View Website →
+                </a>
+
+               </div>            
 
             </div>
 
             <div className="border border-slate-200 rounded-2xl p-6 print:p-2 break-inside-avoid hover:border-slate-300 transition print:p-2">
 
             <h3 className="text-xl font-semibold mb-2">
-                React Sudoku Game
+                St Johns Laboratory
             </h3>
 
             <p className="text-slate-600 leading-6 mb-4 print:text-[10px] print:leading-3">
-                Interactive Sudoku game built using React with responsive
-                gameplay, reusable components, drag-and-drop functionality,
-                and timer-based game logic.
+                Worked on Magento ecommerce development, responsive frontend redesigns, and performance optimisation across the company website and digital platforms.
             </p>
 
             <ul className="space-y-2 text-slate-700 leading-6 list-disc pl-5 mb-6 print:mb-2 print:hidden">
 
                 <li>
-                Built reusable React components and dynamic frontend interactions.
+                Redesigned and developed responsive frontend pages including the homepage, antibody validation pages, and blog layouts
                 </li>
 
                 <li>
-                Developed drag-and-drop gameplay mechanics and timer functionality.
+                Supported the migration of the company ecommerce platform from Magento 1.9 and helped establish staging environments for testing and deployment workflows.
                 </li>
 
                 <li>
-                Implemented responsive layouts for desktop and mobile devices.
+                Analysed, debugged, and tested frontend and backend functionality across staging and production environments
                 </li>
 
             </ul>
 
             <div className="flex flex-wrap gap-3 mb-6 print:mb-2 print:hidden">
                 {[
-                "React",
+                "Magento 1.9 & 2",
                 "JavaScript",
                 "Responsive Design",
                 "CSS",
@@ -1142,15 +1149,18 @@ export default function CVPage() {
                 </span>
                 ))}
             </div>
-
+            <div className="mt-auto flex justify-between">
+            <span className="mb-2">https://stjohnslabs.com</span>
             <a
-                href="https://www.loquetlondon.com/sudoku"
+                href="https://stjohnslabs.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-medium hover:underline"
             >
-                View Project →
+                View Website →
             </a>
+
+            </div>
 
             </div>
 
@@ -1182,16 +1192,17 @@ export default function CVPage() {
                 </span>
                 ))}
             </div>
-
+             <div className="mt-auto flex justify-between">
+            <span className="mb-2">https://www.vinodsoba.co.uk</span>
             <a
                 href="https://www.vinodsoba.co.uk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-medium hover:underline"
             >
-                View Project →
+                View Website →
             </a>
-
+            </div>
             </div>
 
           </div>

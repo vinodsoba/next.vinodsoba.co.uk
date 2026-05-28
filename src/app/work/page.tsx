@@ -129,7 +129,7 @@ export default async function WorkPage() {
                   {/* DESCRIPTION */}
                   <p className="mt-6 max-w-xl text-lg leading-8 text-slate-400">
 
-                    {portfolio?.acf?.project_focus}
+                    {portfolio?.acf?.challenge_sub_title}
 
                   </p>
 
