@@ -1,11 +1,13 @@
 // @ts-nocheck
 
 import { getPortfolioBySlug } from "@/lib/getPortfolio";
+import Image from "next/image";
+import ContentRow from "@/components/casestudy/ContentRow";
 
 export default async function PortfolioCaseStudy({ params }) {
 
   const { slug } = await params;
-  
+
   const portfolio = await getPortfolioBySlug(slug);
 
   if (!portfolio) {
@@ -43,58 +45,77 @@ export default async function PortfolioCaseStudy({ params }) {
 
               {portfolio?.acf?.project_focus}
 
-            </p>
-
-            {/* TAGS */}
-            <div className="mt-10 flex flex-wrap gap-3">
-
-              {[
-                "Next.js",
-                "React",
-                "Performance",
-                "GA4",
-                "UX Optimisation",
-              ].map((tag, index) => (
-
-                <div
-                  key={index}
-                  className="
-                    rounded-xl
-                    border border-white/10
-                    bg-white/5
-                    px-4 py-2
-                    text-sm
-                    text-white
-                  "
-                >
-
-                  {tag}
-
-                </div>
-
-              ))}
-
-            </div>
+            </p>         
 
           </div>
 
           {/* RIGHT IMAGE */}
           <div className="relative overflow-hidden rounded-[32px]">
 
-            <img
-              src={portfolio?.acf?.hero_image}
-              alt={portfolio?.title?.rendered}
+            {portfolio?.acf?.hero_image ? (
+
+              <img
+                src={portfolio?.acf?.hero_image}
+                alt={portfolio?.title?.rendered}
+                className="
+                  h-full
+                  w-full
+                  object-cover
+                  object-center
+                "
+              />
+
+          ) : (
+
+            <div
               className="
-                h-full
-                w-full
-                object-cover
-                object-center
+                flex
+                min-h-[500px]
+                items-center
+                justify-center
+                bg-[#0d1224]
               "
-            />
+            >
+
+              <p className="text-slate-500">
+
+                No image uploaded
+
+              </p>
+
+            </div>
+
+          )}
 
           </div>
 
         </div>
+
+      </section>
+
+      <section>
+
+          <ContentRow
+          eyebrow={portfolio?.acf?.challenge_title}
+          title={portfolio?.acf?.challenge_sub_title}
+          content={portfolio?.acf?.challenge_content}
+          image={portfolio?.acf?.photo_gallery}
+        />
+
+        <ContentRow
+          reverse
+          eyebrow={portfolio?.acf?.eyebrow_2}
+          title="Improving frontend performance and UX"
+          content={portfolio?.acf?.solution_content}
+          image={portfolio?.acf?.photo_gallery_2}
+        />
+
+         <ContentRow
+          eyebrow={portfolio?.acf?.eyebrow}
+          title={portfolio?.acf?.results_title}
+          content={portfolio?.acf?.results_content}
+          image={portfolio?.acf?.photo_gallery_3}
+        />
 
       </section>
 
@@ -131,7 +152,7 @@ export default async function PortfolioCaseStudy({ params }) {
 
               <h3 className="mt-4 text-2xl font-semibold">
 
-                UX & Performance
+                {portfolio?.acf?.project_focus}
 
               </h3>
 
@@ -147,7 +168,7 @@ export default async function PortfolioCaseStudy({ params }) {
 
               <h3 className="mt-4 text-2xl font-semibold">
 
-                React / Next.js
+                {portfolio?.acf?.project_stack}
 
               </h3>
 
@@ -163,7 +184,7 @@ export default async function PortfolioCaseStudy({ params }) {
 
               <h3 className="mt-4 text-2xl font-semibold">
 
-                Transport & Mobility
+                {portfolio?.acf?.industry}
 
               </h3>
 
