@@ -16,9 +16,9 @@ import Cta from "@/components/servicesupport/CTA";
 import ContentRow from "@/components/seo/ContentRow";
 import SeoDashboard from "@/components/seo/SeoDashboard";
 import PerformancePanel from "@/components/seo/PerformancePanel";
-
-
-
+import CodeEditorPanel from "@/components/webdevelopment/CodeEditorPanel";
+import PerformanceDashboard from "@/components/webdevelopment/PerformanceDashboard";
+import ApiCmsPanel from "@/components/webdevelopment/ApiCmsPanel"
 
 export const revalidate = 60;
 
@@ -68,6 +68,18 @@ export default async function ServicePage({
         hero_heading_subtitle={service.acf?.hero_heading_subtitle}
         ctaText={service.acf?.hero_cta_text}
         ctaUrl={service.acf?.hero_cta_url}
+        isDark={isWebDevelopmentPage}
+        badges={
+        isWebDevelopmentPage
+          ? [
+              "Next.js",
+              "React",
+              "Tailwind CSS",
+              "Headless CMS",
+              "Performance Optimised",
+            ]
+          : []
+      }
       />
       ) : 
       <section className="relative overflow-hidden bg-white">
@@ -79,11 +91,8 @@ export default async function ServicePage({
           <p 
           className="mt-6 max-w-2xl text-lg text-[#bfc3c9] leading-relaxed"
           />
-
         </div>
-
       </section>
-
      }
 
     {isWebSupportPage ?
@@ -97,6 +106,61 @@ export default async function ServicePage({
         
       : null 
     }
+
+    {isWebDevelopmentPage ? (
+      <>
+      <ContentRow
+        number="01"
+        title="Frontend Development"
+        description="Modern responsive interfaces built using React, Next.js, Tailwind CSS, and scalable component-driven architecture focused on performance and user experience."
+        bullets={[
+          "Reusable Component Systems",
+          "Responsive Frontend Architecture",
+          "Modern UI / UX Development",
+          "Performance Focused Builds",
+        ]}
+      >
+        <CodeEditorPanel />
+
+      </ContentRow>
+
+      <ContentRow
+        reverse
+        number="02"
+        title="Performance Optimisation"
+        description="Performance-focused development designed to improve loading speeds, Core Web Vitals, SEO scores, and overall user experience across modern websites and web applications."
+        bullets={[
+          "Core Web Vitals Optimisation",
+          "Lighthouse Performance Improvements",
+          "Fast Loading Frontend Architecture",
+          "SEO & Accessibility Best Practices",
+        ]}
+      >
+      
+          <PerformanceDashboard />
+
+      </ContentRow>
+
+
+      <ContentRow
+        number="03"
+        title="CMS & API Integrations"
+        description="Headless CMS integrations and API-driven architectures designed to deliver scalable, flexible, and high-performance digital experiences across modern websites and applications."
+        bullets={[
+          "Headless WordPress Architecture",
+          "REST API Integrations",
+          "Dynamic Content Rendering",
+          "Scalable CMS Driven Systems",
+        ]}
+      >
+      
+          <ApiCmsPanel />
+
+      </ContentRow>
+
+      </>
+      
+    ) : null}
       
     {isWebSeoPage ? (
       <>
@@ -220,7 +284,7 @@ export default async function ServicePage({
             description="I structure pages with clear calls to action, strong content hierarchy, and intuitive journeys that support business goals."
             gradient="from-yellow-400 via-orange-400 to-red-500"
           >
-            <ConversionFlow />
+          <ConversionFlow />
           </Section>
           <LetsTalk />
         </>
