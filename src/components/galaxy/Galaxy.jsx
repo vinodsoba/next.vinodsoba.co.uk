@@ -35,7 +35,7 @@ export default function Galaxy() {
           />
         </motion.div>
       </div>
-
+      
       {/* Stars / Planets */}
       <div
         className={`

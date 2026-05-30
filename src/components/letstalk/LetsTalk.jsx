@@ -34,7 +34,7 @@ export default function LetsTalk() {
           </Link>
 
           <Link
-            href="/projects"
+            href="/work"
             className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition"
           >
             View Projects

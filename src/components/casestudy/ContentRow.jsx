@@ -4,6 +4,8 @@ export default function ContentRow({
   content,
   image,
   reverse = false,
+  children
+  
 }) {
 
   return (
@@ -55,8 +57,9 @@ export default function ContentRow({
         {/* IMAGE */}
         <div className="overflow-hidden rounded-[32px]">
 
-          {image ? (
-
+          {children ? (
+            children
+          ): image ? (
             <img
               src={image}
               alt={title}
@@ -68,11 +71,7 @@ export default function ContentRow({
               "
             />
 
-          ) : (
-
-            <div className="min-h-[500px] bg-[#0d1224]" />
-
-          )}
+          ) : null }
 
         </div>
 

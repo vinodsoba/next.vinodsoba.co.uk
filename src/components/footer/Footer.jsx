@@ -76,6 +76,11 @@ export default function Footer() {
                   Contact
                 </Link>
               </li>
+               <li>
+                <Link href="/cv" className="hover:text-white">
+                  View CV
+                </Link>
+              </li>
             </ul>
           </div>
 

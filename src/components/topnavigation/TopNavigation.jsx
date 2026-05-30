@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export default function TopNavigation({ menuItems = [] }) {
+export default function TopNavigation({ menuItems = [], setMenuOpen }) {
   if (!menuItems.length) return null;
 
   return (
@@ -10,6 +10,7 @@ export default function TopNavigation({ menuItems = [] }) {
       {menuItems.map((item) => (
         <li key={item.id || item.url}>
           <Link
+            onClick={() => setMenuOpen(false)}
             href={item.url}
             className="
               group flex items-center justify-between

@@ -23,7 +23,7 @@ export default function Hero({
       `}
       >
 
-      <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
+      <div className="max-w-7xl mx-auto px-6 py-29 md:py-32">
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
@@ -39,7 +39,7 @@ export default function Hero({
 
             {/* Heading */}
            <h1
-            className={`mt-6 text-5xl md:text-7xl font-semibold leading-tight tracking-tight ${
+            className={`mt-6 text-3xl md:text-7xl font-semibold leading-tight tracking-tight ${
               isDark 
               ? "text-white"
               : "text-black"            
@@ -58,17 +58,17 @@ export default function Hero({
               {hero_heading_subtitle}
 
             {/* Buttons */}
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            {/*<div className="mt-10 flex flex-col sm:flex-row gap-4">*/}
 
               {/* Primary */}
-              <Link 
+              {/*<Link 
               href={`${ctaUrl}`}
               className="flex items-center justify-center h-14 rounded-2xl bg-emerald-500 px-8 font-medium text-white transition hover:bg-emerald-600">
                 {ctaText}
-              </Link>
+              </Link>*/}
 
               {/* Secondary */}
-              <Link 
+              {/*<Link 
               href="/services"
               className="flex items-center justify-center h-14 rounded-2xl border border-slate-200 bg-white px-8 font-medium text-black transition hover:border-emerald-500">
                 View All Services
