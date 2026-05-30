@@ -26,7 +26,10 @@ export default function Header({ menuItems = [], }) {
 
   const isLightPage =
   pathname === "/contact" ||
-  pathname.startsWith("/services");
+  pathname.startsWith("/services") ||
+  pathname === "/login" || 
+  pathname === "/register";
+  
    
 
   // Detect scroll
@@ -67,8 +70,8 @@ export default function Header({ menuItems = [], }) {
           </button>
 
           {/* CENTER: Logo */}
-          <Link href="/" className="md:absolute md:left-1/2 md:-translate-x-1/2
-    ml-auto md:ml-0">
+          <Link href="/" className="md:absolute md:left-1/2  md:-translate-x-1/2
+    ">
             <Logo />
           </Link>
 
@@ -110,7 +113,7 @@ export default function Header({ menuItems = [], }) {
         </button>
 
         <div className="px-6 space-y-6 text-lg">
-          <Navigation menuItems={menuItems} mobile />
+          <Navigation setMenuOpen={setMenuOpen} menuItems={menuItems} mobile />
         </div>
 
         <div className="md:hidden px-6 mt-10 space-y-4 text-center">

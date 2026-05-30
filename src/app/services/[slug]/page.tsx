@@ -18,7 +18,10 @@ import SeoDashboard from "@/components/seo/SeoDashboard";
 import PerformancePanel from "@/components/seo/PerformancePanel";
 import CodeEditorPanel from "@/components/webdevelopment/CodeEditorPanel";
 import PerformanceDashboard from "@/components/webdevelopment/PerformanceDashboard";
-import ApiCmsPanel from "@/components/webdevelopment/ApiCmsPanel"
+import ApiCmsPanel from "@/components/webdevelopment/ApiCmsPanel";
+import ReliableStructure from "@/components/hosting/ReliableInfrastructure";
+import SecurityPanel from "@/components/hosting/SecurityPanel";
+import WordPressPanel from "@/components/wordpress/WordpressPanel";
 
 export const revalidate = 60;
 
@@ -49,6 +52,10 @@ export default async function ServicePage({
 
   const isWebDevelopmentPage = slug === "web-development";
 
+  const isWebHostingPage = slug === "hosting";
+
+  const isWebWordPress = slug === "wordpress";
+
   const image =
     service?.acf?.post_images ||
     (service as any)?._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
@@ -61,7 +68,9 @@ export default async function ServicePage({
       {isWebDesignPage || 
       isWebSeoPage || 
       isWebSupportPage ||
-      isWebDevelopmentPage ? (
+      isWebDevelopmentPage ||
+      isWebWordPress ||
+      isWebHostingPage ? (
         <Hero 
         eyebrow={service.acf?.hero_eyebrow}
         hero_heading_title={service.acf?.hero_heading_title}
@@ -161,6 +170,45 @@ export default async function ServicePage({
       </>
       
     ) : null}
+
+    {isWebHostingPage ? (
+      <>
+
+      <ContentRow
+          number="01"
+          title={service?.acf?.row_1_title}
+          description={service?.acf?.row_1_sub_title}
+          bullets={[
+            "99.9% Uptime Monitoring",
+            "Daily Backups",
+            "SSL Certificates",
+            "Server Monitoring",
+          ]}
+          
+        >
+          <ReliableStructure />
+
+        </ContentRow>
+        
+        <ContentRow
+          reverse
+          number="02"
+          title={service?.acf?.row_2_title}
+          description={service?.acf?.row_2_sub_title}
+          bullets={[
+            "SSL Certificate Management",
+            "Security Monitoring",
+            "Backup & Recovery",
+            "Software Updates",
+          ]}
+          
+        >
+          <SecurityPanel />
+
+        </ContentRow>
+      </>
+
+    ) : null }
       
     {isWebSeoPage ? (
       <>
@@ -215,12 +263,73 @@ export default async function ServicePage({
         </>
       ) : null}
 
+      {isWebWordPress ? (
+        <>
+          <ContentRow
+          number="01"
+          title={service?.acf?.row_1_eyebrow}
+          description={service?.acf?.row_1_title}
+          subTitle={service?.acf?.row_1_sub_title}
+          bullets={[
+            "Custom Theme Development",
+            "Responsive Design",
+            "Landing Pages",
+            "Lead Generation Websites",
+            "Business Websites",
+            "Conversion Focused UX"
+          ]}
+          imageClassName="
+          w-full
+          max-w-[850px]
+          mx-auto
+          translate-y-8
+          scale-110
+        "
+          image="/images/desktop-image-wordpress.png"
+        >
+      
+
+        </ContentRow>
+
+         <ContentRow
+          reverse
+          number="02"
+          title={service?.acf?.row_2_eyebrow}
+          description={service?.acf?.row_2_title}
+          bullets={[
+            "Advanced Custom Fields",
+            "Flexible Content Layouts",
+            "Reusable Components",
+            "Page Builders",
+            "Custom Post Types",
+            "Content Management"
+          ]}
+          imageClassName="
+          w-full
+          max-w-[850px]
+          mx-auto
+          translate-y-8
+          scale-110
+        "
+          
+        >
+       <WordPressPanel />
+
+        </ContentRow>
+
+        <LetsTalk />
+        </>
+
+      ) : null} 
+
       {/* IMAGE */}
 
       {!isWebDesignPage && 
       !isWebSupportPage &&
       !isWebSeoPage &&
       !isWebDevelopmentPage &&
+      !isWebHostingPage &&
+      !isWebWordPress &&
       image && (
         <div className="relative w-full h-[400px] md:h-[500px]">
           <img

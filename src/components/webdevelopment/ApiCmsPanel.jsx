@@ -1,235 +1,168 @@
 "use client";
 
 export default function ApiCmsPanel() {
-
   return (
-
-    <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-sm">
-
+    <div
+      className="
+        relative
+        flex
+        h-[400px]
+        flex-col
+        justify-between
+        overflow-hidden
+        rounded-[32px]
+        border border-slate-200
+        bg-white
+        shadow-sm
+        p-6
+      "
+    >
       {/* Glow */}
       <div className="absolute inset-0 bg-cyan-500/5 blur-3xl"></div>
 
-      <div className="relative p-6 md:p-8">
+      {/* Header */}
+      <div className="relative flex items-center justify-between">
 
-        {/* TOP */}
-        <div className="flex items-center justify-between">
+        <div>
 
-          <div>
+          <h3 className="text-xl font-semibold text-black">
+            API & CMS Architecture
+          </h3>
 
-            <h3 className="text-xl font-semibold text-black">
+          <p className="mt-1 text-sm text-slate-500">
+            Headless CMS powering dynamic experiences
+          </p>
 
-              API & CMS Architecture
+        </div>
 
-            </h3>
+        <div className="rounded-full bg-cyan-50 px-3 py-1 text-sm font-medium text-cyan-600">
+          Live Sync
+        </div>
 
-            <p className="mt-1 text-sm text-slate-500">
+      </div>
 
-              Connected systems powering dynamic frontend experiences
+      {/* Architecture Flow */}
+      <div className="relative flex items-center justify-center">
 
+        <div className="flex items-center gap-6">
+
+          {/* WordPress */}
+          <div
+            className="
+              rounded-2xl
+              border border-slate-200
+              bg-slate-50
+              px-6
+              py-5
+              text-center
+            "
+          >
+
+            <p className="text-xs uppercase tracking-wide text-slate-500">
+              CMS
             </p>
 
-          </div>
-
-          <div className="rounded-full bg-cyan-50 px-3 py-1 text-sm font-medium text-cyan-600">
-
-            Live Sync
+            <h4 className="mt-2 text-lg font-semibold text-black">
+              WordPress
+            </h4>
 
           </div>
 
-        </div>
+          {/* Connector */}
+          <div className="flex items-center">
 
-        {/* MAIN FLOW */}
-        <div className="mt-10 grid items-center gap-6 lg:grid-cols-[1fr_120px_1fr]">
+            <div className="h-[2px] w-16 bg-gradient-to-r from-cyan-400 to-emerald-400"></div>
 
-          {/* CMS */}
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <div className="mx-2 h-3 w-3 rounded-full bg-emerald-400 animate-pulse"></div>
 
-            <div className="flex items-center justify-between">
-
-              <div>
-
-                <p className="text-sm text-slate-500">
-
-                  CMS
-
-                </p>
-
-                <h4 className="mt-2 text-2xl font-semibold text-black">
-
-                  WordPress
-
-                </h4>
-
-              </div>
-
-              <div className="rounded-2xl bg-white p-3 shadow-sm">
-
-                <div className="h-8 w-8 rounded-xl bg-cyan-500"></div>
-
-              </div>
-
-            </div>
-
-            <div className="mt-6 space-y-3">
-
-              {[
-                "Dynamic Content",
-                "ACF Flexible Fields",
-                "REST API",
-                "SEO Management",
-              ].map((item, index) => (
-
-                <div
-                  key={index}
-                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700"
-                >
-
-                  {item}
-
-                </div>
-
-              ))}
-
-            </div>
+            <div className="h-[2px] w-16 bg-gradient-to-r from-emerald-400 to-cyan-400"></div>
 
           </div>
 
-          {/* CONNECTION */}
-          <div className="relative hidden lg:flex items-center justify-center">
+          {/* Next.js */}
+          <div
+            className="
+              rounded-2xl
+              border border-slate-200
+              bg-slate-50
+              px-6
+              py-5
+              text-center
+            "
+          >
 
-            {/* Line */}
-            <div className="absolute h-1 w-full rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400"></div>
+            <p className="text-xs uppercase tracking-wide text-slate-500">
+              Frontend
+            </p>
 
-            {/* Pulse */}
-            <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-lg">
-
-              <div className="h-5 w-5 rounded-full bg-emerald-400 animate-pulse"></div>
-
-            </div>
-
-          </div>
-
-          {/* FRONTEND */}
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-
-            <div className="flex items-center justify-between">
-
-              <div>
-
-                <p className="text-sm text-slate-500">
-
-                  Frontend
-
-                </p>
-
-                <h4 className="mt-2 text-2xl font-semibold text-black">
-
-                  Next.js
-
-                </h4>
-
-              </div>
-
-              <div className="rounded-2xl bg-white p-3 shadow-sm">
-
-                <div className="h-8 w-8 rounded-xl bg-emerald-500"></div>
-
-              </div>
-
-            </div>
-
-            <div className="mt-6 space-y-3">
-
-              {[
-                "React Components",
-                "Dynamic Routing",
-                "Performance Optimised",
-                "Responsive UI",
-              ].map((item, index) => (
-
-                <div
-                  key={index}
-                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700"
-                >
-
-                  {item}
-
-                </div>
-
-              ))}
-
-            </div>
+            <h4 className="mt-2 text-lg font-semibold text-black">
+              Next.js
+            </h4>
 
           </div>
 
         </div>
 
-        {/* API STATUS */}
-        <div className="mt-10 grid gap-4 md:grid-cols-4">
+      </div>
 
-          {[
-            ["REST API", "Connected"],
-            ["Content Sync", "Active"],
-            ["Deployment", "Live"],
-            ["Response Time", "120ms"],
-          ].map((item, index) => (
+      {/* Health Card */}
+      <div
+        className="
+          rounded-2xl
+          border border-cyan-200
+          bg-cyan-50
+          p-4
+        "
+      >
 
-            <div
-              key={index}
-              className="rounded-2xl border border-slate-200 p-4"
-            >
+        <div className="flex items-center justify-between">
 
-              <p className="text-sm text-slate-500">
+          <span className="text-sm text-slate-600">
+            Architecture Health
+          </span>
 
-                {item[0]}
-
-              </p>
-
-              <div className="mt-3 flex items-center justify-between">
-
-                <h4 className="text-lg font-semibold text-black">
-
-                  {item[1]}
-
-                </h4>
-
-                <div className="h-2 w-2 rounded-full bg-emerald-400"></div>
-
-              </div>
-
-            </div>
-
-          ))}
+          <span className="font-semibold text-cyan-600">
+            Connected
+          </span>
 
         </div>
 
-        {/* TECH TAGS */}
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-4 grid grid-cols-3 gap-3">
 
-          {[
-            "Headless CMS",
-            "REST API",
-            "Dynamic Content",
-            "Scalable Architecture",
-          ].map((tag, index) => (
+          <div>
+            <p className="text-xs text-slate-500">
+              API
+            </p>
 
-            <div
-              key={index}
-              className="rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-600"
-            >
+            <p className="font-semibold text-black">
+              Active
+            </p>
+          </div>
 
-              {tag}
+          <div>
+            <p className="text-xs text-slate-500">
+              Sync
+            </p>
 
-            </div>
+            <p className="font-semibold text-black">
+              Live
+            </p>
+          </div>
 
-          ))}
+          <div>
+            <p className="text-xs text-slate-500">
+              Response
+            </p>
+
+            <p className="font-semibold text-black">
+              120ms
+            </p>
+          </div>
 
         </div>
 
       </div>
 
     </div>
-
   );
-
 }

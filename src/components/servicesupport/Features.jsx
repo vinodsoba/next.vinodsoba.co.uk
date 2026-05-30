@@ -59,7 +59,7 @@ export default function Features() {
 
   return (
 
-    <section className="bg-white py-24">
+    <section className="bg-white md:py-24 py-0">
 
       <div className="max-w-7xl mx-auto px-6">
 

@@ -1,145 +1,136 @@
 "use client";
 
 export default function PerformancePanel() {
-
   return (
+    <div
+      className="
+        flex
+        h-[400px]
+        flex-col
+        justify-between
+        rounded-[32px]
+        border border-slate-200
+        bg-white
+        p-6
+      "
+    >
+      {/* Header */}
+      <div className="flex items-center justify-between">
 
-    <div className="bg-white p-6 md:p-8">
+        <div>
 
-        {/* TOP STATS */}
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+          <h3 className="text-xl font-semibold text-black">
+            Search Performance
+          </h3>
+
+          <p className="mt-1 text-sm text-slate-500">
+            Traffic & visibility insights
+          </p>
+
+        </div>
+
+        <div className="rounded-full bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-600">
+          Live Data
+        </div>
+
+      </div>
+
+      {/* Metrics */}
+      <div className="grid grid-cols-2 gap-3">
 
         {[
           ["18.2K", "Visitors"],
           ["256K", "Impressions"],
           ["7.1%", "CTR"],
-          ["12.4", "Avg Position"],
+          ["12.4", "Position"],
         ].map((stat, index) => (
 
           <div
             key={index}
-            className="rounded-2xl border border-slate-200 p-4"
+            className="
+              rounded-2xl
+              border
+              border-slate-200
+              bg-slate-50
+              p-3
+            "
           >
 
-            <h3 className="text-2xl font-semibold text-black">
-
-              {stat[0]}
-
-            </h3>
-
-            <p className="mt-1 text-sm text-slate-500">
-
+            <p className="text-xs text-slate-500">
               {stat[1]}
-
             </p>
+
+            <h4 className="mt-2 text-2xl font-semibold text-black">
+              {stat[0]}
+            </h4>
 
           </div>
 
         ))}
-
-        </div>
-
-      {/* PERFORMANCE GRAPH */}
-      <div className="mt-6 rounded-3xl border border-slate-200 p-6">
-
-        <div className="flex items-center justify-between">
-
-          <div>
-
-            <h4 className="text-lg font-semibold text-black">
-
-              Search Performance Overview
-
-            </h4>
-
-            <p className="mt-1 text-sm text-slate-500">
-
-              Organic traffic and visibility trends
-
-            </p>
-
-          </div>
-
-          <div className="rounded-full bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-600">
-
-            Live Data
-
-          </div>
-
-        </div>
-
-        {/* GRAPH */}
-        <div className="relative mt-8 h-56 overflow-hidden rounded-2xl bg-slate-50">
-
-          {/* Grid */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:40px_40px] opacity-40"></div>
-
-          {/* BLUE LINE */}
-          <svg
-            className="absolute inset-0 h-full w-full"
-            viewBox="0 0 500 220"
-            fill="none"
-          >
-
-            <path
-              d="M0 170 C60 150, 100 130, 160 135 C230 140, 260 90, 320 100 C390 110, 430 70, 500 50"
-              stroke="#3b82f6"
-              strokeWidth="4"
-              fill="none"
-              strokeLinecap="round"
-            />
-
-          </svg>
-
-          {/* GREEN LINE */}
-          <svg
-            className="absolute inset-0 h-full w-full"
-            viewBox="0 0 500 220"
-            fill="none"
-          >
-
-            <path
-              d="M0 190 C60 180, 100 170, 160 140 C220 110, 280 90, 340 80 C410 70, 450 40, 500 20"
-              stroke="#10b981"
-              strokeWidth="4"
-              fill="none"
-              strokeLinecap="round"
-            />
-
-          </svg>
-
-          {/* GLOW */}
-          <div className="absolute bottom-0 left-0 h-40 w-full bg-gradient-to-t from-emerald-100/40 to-transparent"></div>
-
-        </div>
 
       </div>
 
-      {/* TAGS */}
-      <div className="mt-6 flex flex-wrap gap-3">
+      {/* Mini Graph */}
+      <div
+        className="
+          relative
+          h-24
+          overflow-hidden
+          rounded-2xl
+          border
+          border-slate-200
+          bg-slate-50
+        "
+      >
 
-        {[
-          "GA4 Connected",
-          "Search Console",
-          "Live Tracking",
-          "Weekly Reports",
-        ].map((tag, index) => (
+        <svg
+          className="absolute inset-0 h-full w-full"
+          viewBox="0 0 500 120"
+          fill="none"
+        >
 
-          <div
-            key={index}
-            className="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-600"
-          >
+          <path
+            d="M0 90 C60 80,100 70,160 75 C230 80,260 45,320 50 C390 55,430 35,500 20"
+            stroke="#10b981"
+            strokeWidth="4"
+            fill="none"
+            strokeLinecap="round"
+          />
 
-            {tag}
+        </svg>
 
-          </div>
+      </div>
 
-        ))}
+      {/* Summary */}
+      <div
+        className="
+          rounded-2xl
+          border border-emerald-200
+          bg-emerald-50
+          p-4
+        "
+      >
+
+        <div className="flex items-center justify-between">
+
+          <span className="text-sm text-slate-600">
+            Visibility Score
+          </span>
+
+          <span className="font-semibold text-emerald-600">
+            +68%
+          </span>
+
+        </div>
+
+        <div className="mt-3 h-2 overflow-hidden rounded-full bg-emerald-100">
+
+          <div className="h-full w-[68%] rounded-full bg-emerald-500"></div>
+
+        </div>
 
       </div>
 
     </div>
-
   );
-
 }
