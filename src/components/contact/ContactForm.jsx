@@ -34,13 +34,18 @@ export default function ContactForm() {
     }
 
     try {
+      console.log("CONTACT FORM V2");
+      console.log({
+        ...formData,
+        token,
+      });
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          formData,
+          ...formData,
           token,
         
         }),
@@ -60,11 +65,11 @@ export default function ContactForm() {
           message: "",
         });
       } else {
-        alert("Something went wrong.");
+        alert(data.error || "Something went wrong.");
       }
     } catch (error) {
       console.error(error);
-      alert("Something went wrong.");
+      alert(data.error || "Something went wrong.");
     }
 
     setIsSubmitting(false);
