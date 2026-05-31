@@ -6,22 +6,23 @@ export default function ApiCmsPanel() {
       className="
         relative
         flex
-        h-[400px]
+        min-h-[400px]
+        min-w-0
         flex-col
         justify-between
         overflow-hidden
         rounded-[32px]
         border border-slate-200
         bg-white
-        shadow-sm
         p-6
+        shadow-sm
       "
     >
       {/* Glow */}
-      <div className="absolute inset-0 bg-cyan-500/5 blur-3xl"></div>
+      <div className="absolute inset-0 bg-cyan-500/5 blur-3xl" />
 
       {/* Header */}
-      <div className="relative flex items-center justify-between">
+      <div className="relative flex items-center justify-between gap-3">
 
         <div>
 
@@ -35,7 +36,18 @@ export default function ApiCmsPanel() {
 
         </div>
 
-        <div className="rounded-full bg-cyan-50 px-3 py-1 text-sm font-medium text-cyan-600">
+        <div
+          className="
+            shrink-0
+            rounded-full
+            bg-cyan-50
+            px-3
+            py-1
+            text-sm
+            font-medium
+            text-cyan-600
+          "
+        >
           Live Sync
         </div>
 
@@ -44,16 +56,28 @@ export default function ApiCmsPanel() {
       {/* Architecture Flow */}
       <div className="relative flex items-center justify-center">
 
-        <div className="flex items-center gap-6">
+        <div
+          className="
+            flex
+            flex-col
+            items-center
+            gap-4
+            md:flex-row
+            md:gap-6
+          "
+        >
 
           {/* WordPress */}
           <div
             className="
+              w-full
+              max-w-[140px]
               rounded-2xl
-              border border-slate-200
+              border
+              border-slate-200
               bg-slate-50
-              px-6
-              py-5
+              px-4
+              py-4
               text-center
             "
           >
@@ -69,24 +93,71 @@ export default function ApiCmsPanel() {
           </div>
 
           {/* Connector */}
-          <div className="flex items-center">
+          <div
+            className="
+              flex
+              flex-col
+              items-center
+              md:flex-row
+            "
+          >
 
-            <div className="h-[2px] w-16 bg-gradient-to-r from-cyan-400 to-emerald-400"></div>
+            <div
+              className="
+                h-10
+                w-[2px]
+                bg-gradient-to-b
+                from-cyan-400
+                to-emerald-400
 
-            <div className="mx-2 h-3 w-3 rounded-full bg-emerald-400 animate-pulse"></div>
+                md:h-[2px]
+                md:w-16
+                md:bg-gradient-to-r
+              "
+            />
 
-            <div className="h-[2px] w-16 bg-gradient-to-r from-emerald-400 to-cyan-400"></div>
+            <div
+              className="
+                mx-0
+                my-2
+                h-3
+                w-3
+                rounded-full
+                bg-emerald-400
+                animate-pulse
+
+                md:mx-2
+                md:my-0
+              "
+            />
+
+            <div
+              className="
+                h-10
+                w-[2px]
+                bg-gradient-to-b
+                from-emerald-400
+                to-cyan-400
+
+                md:h-[2px]
+                md:w-16
+                md:bg-gradient-to-r
+              "
+            />
 
           </div>
 
           {/* Next.js */}
           <div
             className="
+              w-full
+              max-w-[140px]
               rounded-2xl
-              border border-slate-200
+              border
+              border-slate-200
               bg-slate-50
-              px-6
-              py-5
+              px-4
+              py-4
               text-center
             "
           >
@@ -109,7 +180,8 @@ export default function ApiCmsPanel() {
       <div
         className="
           rounded-2xl
-          border border-cyan-200
+          border
+          border-cyan-200
           bg-cyan-50
           p-4
         "
@@ -130,6 +202,7 @@ export default function ApiCmsPanel() {
         <div className="mt-4 grid grid-cols-3 gap-3">
 
           <div>
+
             <p className="text-xs text-slate-500">
               API
             </p>
@@ -137,9 +210,11 @@ export default function ApiCmsPanel() {
             <p className="font-semibold text-black">
               Active
             </p>
+
           </div>
 
           <div>
+
             <p className="text-xs text-slate-500">
               Sync
             </p>
@@ -147,9 +222,11 @@ export default function ApiCmsPanel() {
             <p className="font-semibold text-black">
               Live
             </p>
+
           </div>
 
           <div>
+
             <p className="text-xs text-slate-500">
               Response
             </p>
@@ -157,6 +234,7 @@ export default function ApiCmsPanel() {
             <p className="font-semibold text-black">
               120ms
             </p>
+
           </div>
 
         </div>
