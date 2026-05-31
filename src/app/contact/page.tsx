@@ -1,4 +1,4 @@
-import Link from "next/link";
+import ContactForm from "@/components/contact/ContactForm";
 
 export const metadata = {
   title: "Contact | Vinod Soba",
@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="bg-white text-slate-950">
+  <main className="bg-white text-slate-950">
       <section className="px-6 py-24">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
           <div>
@@ -44,75 +44,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="rounded-md bg-slate-950 p-8 text-white shadow-2xl">
-            <h2 className="text-2xl font-bold">Start a conversation</h2>
-
-            <p className="mt-3 text-slate-300">
-              Tell me what you’re working on and I’ll get back to you as soon
-              as possible.
-            </p>
-
-            <form className="mt-8 space-y-5">
-              <div>
-                <label className="mb-2 block text-sm font-semibold">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  className="w-full rounded-md border border-white/10 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-pink-400"
-                  placeholder="Your name"
-                />
-              </div>
-
-              <div>
-                <label className="mb-2 block text-sm font-semibold">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  className="w-full rounded-md border border-white/10 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-pink-400"
-                  placeholder="you@example.com"
-                />
-              </div>
-
-              <div>
-                <label className="mb-2 block text-sm font-semibold">
-                  Project type
-                </label>
-                <select
-                  name="projectType"
-                  className="w-full rounded-md border border-white/10 bg-white/10 px-4 py-3 text-white outline-none focus:border-pink-400"
-                >
-                  <option className="text-slate-900">Web Design</option>
-                  <option className="text-slate-900">Front-End Development</option>
-                  <option className="text-slate-900">WordPress / Next.js</option>
-                  <option className="text-slate-900">Magento / eCommerce</option>
-                  <option className="text-slate-900">Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="mb-2 block text-sm font-semibold">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  rows={5}
-                  className="w-full rounded-md border border-white/10 bg-white/10 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-pink-400"
-                  placeholder="Tell me about your project..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full rounded-md bg-gradient-to-r from-pink-500 to-orange-400 px-6 py-3 text-sm font-bold text-white transition hover:scale-[1.02]"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
+          <ContactForm />
         </div>
       </section>
 
@@ -144,5 +76,5 @@ export default function ContactPage() {
         </div>
       </section>
     </main>
-  );
-}
+    )
+  }
