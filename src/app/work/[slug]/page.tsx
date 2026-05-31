@@ -9,6 +9,9 @@ import ResultsDashboard from "@/components/casestudy/ResultsDashboard";
 import EventEcosystemPanel from "@/components/casestudy/EventEcoSystemPanel";
 import ConversionFunnelPanel from "@/components/casestudy/ConversionFunnelPanel";
 import CampaignResultsPanel from "@/components/casestudy/CampaignResultsPanel";
+import DigitalCampaignPanel from "@/components/casestudy/DigitalCampaignPanel";
+import FrontendCampaignPanel from "@/components/casestudy/FrontendCampaignPanel";
+import ResultsPanel from "@/components/casestudy/ResultsPanel";
 
 export const revalidate = 60;
 
@@ -297,11 +300,11 @@ export default async function PortfolioCaseStudy({
               <>
                <ContentRow
                 eyebrow="The Challenge"
-                title={portfolio?.acf?.challenge_sub_title}
+                title={portfolio?.acf?.challenge_title}
                 content={portfolio?.acf?.challenge_content}
                 image={portfolio?.acf?.photo_gallery}
                 >
-                  <EventEcosystemPanel />
+                  <DigitalCampaignPanel />
                 </ContentRow>
 
                 <ContentRow
@@ -311,7 +314,7 @@ export default async function PortfolioCaseStudy({
                 content={portfolio?.acf?.solution_content}
                 image={portfolio?.acf?.photo_gallery_2}
               >
-                  <ConversionFunnelPanel />
+                  <FrontendCampaignPanel />
                 
               </ContentRow>
 
@@ -321,7 +324,7 @@ export default async function PortfolioCaseStudy({
                 content={portfolio?.acf?.results_content}
                 image={portfolio?.acf?.photo_gallery_2}
               >
-                 <CampaignResultsPanel />
+                 <ResultsPanel />
                 
               </ContentRow>
               </>

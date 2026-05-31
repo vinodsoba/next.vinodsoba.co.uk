@@ -8,15 +8,18 @@ export async function POST(request) {
   try {
     const body = await request.json();
 
+    const form = body.formData || body;
+
     const {
-    name,
-    email,
-    company,
-    project,
-    budget,
-    message,
-    token,
-    } = body;
+      name,
+      email,
+      company,
+      project,
+      budget,
+      message,
+    } = form;
+
+    const { token } = body;
 
     // Verify Turnstile
     const verify = await fetch(
@@ -93,12 +96,12 @@ export async function POST(request) {
     });
 
   } catch (error) {
-
-    console.error("RESEND ERROR:", error);
+    console.error("CONTACT FORM ERROR:", error);
 
     return Response.json(
       {
         success: false,
+        error: error.message,
       },
       {
         status: 500,
