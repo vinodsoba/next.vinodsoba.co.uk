@@ -21,7 +21,7 @@ export default function Galaxy() {
     <div className="relative w-full h-full">
 
       {/* Spaceman */}
-      <div className="absolute lg:top-[240px] lg:right-[490px]  xl:right-[100px] 2xl:right-[600px] 2xl:top-[340px] top-[650px] right-[255px]">
+      <div className="absolute sm:right-[262px] md:right-[360px] lg:top-[240px] lg:right-[490px]  xl:right-[100px] 2xl:right-[600px] 2xl:top-[340px] top-[650px] right-[255px]">
         <motion.div
           animate={{ x: [1, 8, 10, 8, 1], y: [1, 2, 3, 2, 1] }}
           transition={{ duration: 4, repeat: Infinity }}
@@ -35,7 +35,7 @@ export default function Galaxy() {
           />
         </motion.div>
       </div>
-
+      
       {/* Stars / Planets */}
       <div
         className={`
@@ -48,7 +48,17 @@ export default function Galaxy() {
       </div>
 
       {/* Rocket */}
-      <div className="absolute top-[650px] right-[255px] flex flex-col items-center w-[55%] opacity-50">
+      <div className="absolute 
+      top-[750px] 
+      right-[55px] 
+      flex flex-col 
+      items-center 
+      w-[55%] 
+      opacity-50
+      sm:right-[362px] md:right-[360px]
+      "
+      
+      >
         <motion.div
         initial={{ opacity: 0, scale: 0, y: -200 }}
         animate={{ opacity: 1, scale: 1, y: -240, x: 0 }}

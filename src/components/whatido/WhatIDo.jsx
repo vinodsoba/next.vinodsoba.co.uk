@@ -14,15 +14,6 @@ export default function WhatIDo({ acf }) {
 
           {/* LEFT */}
           <div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              dangerouslySetInnerHTML={{ __html: acf.about_me_title }}
-              className="text-sm uppercase text-gray-500"
-            />
-
             <motion.div
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -39,13 +30,6 @@ export default function WhatIDo({ acf }) {
               className="text-gray-600 leading-relaxed mb-8"
             />
 
-            <Link
-              href="/about"
-              className="bg-black text-white px-6 py-3 rounded-md"
-            >
-              {acf.what_i_do_cta_text}
-            </Link>
-
           </div>
 
           {/* RIGHT */}
@@ -53,11 +37,12 @@ export default function WhatIDo({ acf }) {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="m-auto"
           >
             <img
               src={acf.about_me_background_image}
               alt=""
-              className="max-w-sm h-auto rounded-lg"
+              className="max-w-[350px] h-auto rounded-lg"
             />
           </motion.div>
 

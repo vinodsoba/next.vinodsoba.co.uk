@@ -129,7 +129,7 @@ export default async function WorkPage() {
                   {/* DESCRIPTION */}
                   <p className="mt-6 max-w-xl text-lg leading-8 text-slate-400">
 
-                    {portfolio?.acf?.project_focus}
+                    {portfolio?.acf?.challenge_sub_title}
 
                   </p>
 
@@ -163,7 +163,7 @@ export default async function WorkPage() {
 
                     {/* WEBSITE */}
                     <Link
-                      href={portfolio?.acf?.website_url || "#"}
+                      href={portfolio?.acf?.cta_url || "#"}
                       target="_blank"
                       className="
                         inline-flex
@@ -182,7 +182,7 @@ export default async function WorkPage() {
                       "
                     >
 
-                      Visit Website
+                      {portfolio?.acf?.cta_text || "Visit Website"}
 
                     </Link>
 

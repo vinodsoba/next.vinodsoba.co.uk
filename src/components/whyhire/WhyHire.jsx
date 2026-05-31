@@ -271,7 +271,7 @@ export default function WhyHire({ data }) {
           <img
             src={data.image}
             alt="Why Hire"
-            className="w-full max-w-[500px]"
+            className="w-full max-w-[400px]"
           />
 
           {/* Floating Note */}
