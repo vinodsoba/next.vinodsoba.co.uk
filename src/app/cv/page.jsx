@@ -1,3 +1,13 @@
+export const metadata = {
+  title: "CV | Vinod Soba",
+  description:
+    "View the professional CV of Vinod Soba, Front-End Web Developer with experience in React, Next.js, WordPress and Magento.",
+
+    robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function CVPage() {
   return (

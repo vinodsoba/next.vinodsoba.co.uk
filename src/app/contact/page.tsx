@@ -4,6 +4,11 @@ export const metadata = {
   title: "Contact | Vinod Soba",
   description:
     "Contact Vinod Soba for web design, front-end development, React, Next.js, WordPress and eCommerce website projects.",
+
+    robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function ContactPage() {

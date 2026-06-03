@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
 
 export default function ContactForm() {
+    const [status, setStatus] = useState("");
+    const [statusType, setStatusType] = useState("");
     const [token, setToken] = useState("");
     const [formData, setFormData] = useState({
     name: "",
@@ -54,7 +56,8 @@ export default function ContactForm() {
       const data = await response.json();
 
       if (data.success) {
-        alert("Message sent successfully!");
+        setStatus("Thank you! Your message has been sent successfully.");
+        setStatusType("success");
 
         setFormData({
           name: "",
@@ -65,11 +68,17 @@ export default function ContactForm() {
           message: "",
         });
       } else {
-        alert(data.error || "Something went wrong.");
+          setStatus(
+            data.error || "Something went wrong. Please try again."
+          );
+        setStatusType("error");
       }
     } catch (error) {
-      console.error(error);
-      alert(data.error || "Something went wrong.");
+      setStatus(
+        "Unable to send message. Please try again later."
+      );
+      setStatusType("error");
+     
     }
 
     setIsSubmitting(false);
@@ -258,6 +267,21 @@ export default function ContactForm() {
             ? "Sending..."
             : "Send Message"}
         </button>
+
+        {status && (
+        <div
+          className={`
+            mt-4 rounded-xl px-4 py-3 text-sm
+            ${
+              statusType === "success"
+                ? "border border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
+                : "border border-red-500/30 bg-red-500/10 text-red-400"
+            }
+          `}
+        >
+          {status}
+        </div>
+      )}
 
       </form>
 
