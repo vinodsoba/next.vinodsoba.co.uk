@@ -22,6 +22,7 @@ import ApiCmsPanel from "@/components/webdevelopment/ApiCmsPanel";
 import ReliableStructure from "@/components/hosting/ReliableInfrastructure";
 import SecurityPanel from "@/components/hosting/SecurityPanel";
 import WordPressPanel from "@/components/wordpress/WordpressPanel";
+import PricingSection from "@/components/servicesupport/PricingSection";
 
 export async function generateMetadata({ params }) {
   const slug = params.slug;
@@ -170,6 +171,7 @@ export default async function ServicePage({
           <>
           <Features />
           <Process />
+          <PricingSection />
           <Cta />
           </>
         )
