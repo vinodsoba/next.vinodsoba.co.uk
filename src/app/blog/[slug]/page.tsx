@@ -87,7 +87,7 @@ export default async function BlogPostPage({
       {/* CONTENT */}
       <section className="py-20">
         <article
-          className="blog-content max-w-6xl mx-auto px-6 prose"
+          className="blog-content max-w-6xl mx-auto px-6 prose prose-lg max-w-none"
           dangerouslySetInnerHTML={{
             __html: post.content.rendered,
           }}
