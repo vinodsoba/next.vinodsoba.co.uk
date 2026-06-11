@@ -10,7 +10,7 @@ export default function TabView({ tabs = [] }) {
   if (!tabs.length) {
     return <div>No Tabs</div>;
   }
-console.log(tabs);
+
   return (
     <div className="w-full">
 

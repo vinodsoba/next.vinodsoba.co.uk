@@ -30,7 +30,7 @@ export default function LoginPage() {
 
       console.log("Logged in");
     } else {
-      console.log(data);
+      console.log("Error with token");
     }
   }
 

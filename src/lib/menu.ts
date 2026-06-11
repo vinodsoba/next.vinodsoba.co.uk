@@ -19,7 +19,5 @@ export async function getMenu(): Promise<MenuItem[]> {
     }
   );
 
-  console.log("MENU RESPONSE:", response.data);
-
   return response.data;
 }

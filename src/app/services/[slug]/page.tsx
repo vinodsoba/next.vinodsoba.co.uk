@@ -22,8 +22,70 @@ import ApiCmsPanel from "@/components/webdevelopment/ApiCmsPanel";
 import ReliableStructure from "@/components/hosting/ReliableInfrastructure";
 import SecurityPanel from "@/components/hosting/SecurityPanel";
 import WordPressPanel from "@/components/wordpress/WordpressPanel";
+import PricingSection from "@/components/servicesupport/PricingSection";
+
+export async function generateMetadata({ params }) {
+  const slug = params.slug;
+
+  const metadataMap = {
+    "web-development": {
+      title: "Web Development Services | Vinod Soba",
+      description:
+        "Custom web development using React, Next.js, WordPress and Magento.",
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+
+    "web-design": {
+      title: "Web Design Services | Vinod Soba",
+      description:
+        "Professional web design services for businesses.",
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+
+    "website-maintenance-support": {
+      title: "Website Maintenance & Support | Vinod Soba",
+      description:
+        "Website maintenance, security updates and ongoing support.",
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+
+    seo: {
+      title: "SEO Services | Vinod Soba",
+      description:
+        "Technical SEO, optimisation and website audits.",
+
+        robots: {
+        index: true,
+        follow: true,
+      },
+    },
+
+    
+  };
+
+  return metadataMap[slug] || {
+    title: "Freelance Web Designer - London",
+    description: "Freelance Web Developer",
+
+    robots: {
+    index: true,
+    follow: true,
+  },
+  };
+}
+
 
 export const revalidate = 60;
+
 
 export default async function ServicePage({
   params,
@@ -109,6 +171,7 @@ export default async function ServicePage({
           <>
           <Features />
           <Process />
+          <PricingSection />
           <Cta />
           </>
         )

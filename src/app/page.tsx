@@ -7,6 +7,17 @@ import WhyHireMe from "@/components/whyhire/WhyHire"
 import { getSkills } from "@/lib/getSkills";
 import { getHomepage } from "@/lib/getHomepage";
 
+export const metadata = {
+  title: "Vinod Soba | Freelance Web Developer London",
+  description:
+    "Freelance Web Developer specialising in React, Next.js, WordPress and Magento. Building fast, responsive websites for businesses across the UK.",
+
+    robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 export default async function Home() {
   let skills: any[] = [];
   let homepage: any = null;
@@ -26,9 +37,6 @@ export default async function Home() {
   }
 
   const acf = homepage?.acf ?? {};
-
-  console.log('data object', acf);
-
 
   return (
     <main>
