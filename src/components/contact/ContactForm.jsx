@@ -37,10 +37,7 @@ export default function ContactForm() {
 
     try {
       console.log("CONTACT FORM V2");
-      console.log({
-        ...formData,
-        token,
-      });
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {

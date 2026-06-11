@@ -18,7 +18,7 @@ export async function getServiceBySlug(slug: string) {
       `/service?slug=${encodeURIComponent(slug)}&_embed`
     );
 
-    console.log("SERVICE FETCH:", slug, res.data);
+    console.log("SERVICE FETCH:");
 
     return res.data && res.data.length ? res.data[0] : null;
   } catch (e) {

@@ -24,10 +24,14 @@ export default function Header({ menuItems = [], }) {
 
   const pathname = usePathname();
 
+  const isBlogPost = pathname.startsWith("/blog/");
+
   const isLightPage =
   pathname === "/contact" ||
   pathname.startsWith("/services") ||
   pathname === "/login" || 
+  pathname === "/blog" ||
+  isBlogPost ||
   pathname === "/register";
   
    
@@ -108,7 +112,7 @@ export default function Header({ menuItems = [], }) {
           ${menuOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
-        <button onClick={() => setMenuOpen(false)} className="p-6 text-2xl cursor-pointer">
+        <button onClick={() => setMenuOpen(false)} className="flex justify-end w-[91%] p-6 text-2xl cursor-pointer">
           ✕
         </button>
 

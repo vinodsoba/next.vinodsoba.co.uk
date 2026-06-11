@@ -38,9 +38,6 @@ export default async function Home() {
 
   const acf = homepage?.acf ?? {};
 
-  console.log('data object', acf);
-
-
   return (
     <main>
 

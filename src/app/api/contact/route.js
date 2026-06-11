@@ -51,7 +51,6 @@ export async function POST(request) {
       );
     }
 
-    console.log("Contact Form:", body);
 
     if (!email || !email.includes("@")) {
     return Response.json(
@@ -88,8 +87,7 @@ export async function POST(request) {
         `,
     });
 
-    console.log("Resend Data:", data);
-    console.log("Resend Error:", error);
+   
 
     return Response.json({
       success: true,

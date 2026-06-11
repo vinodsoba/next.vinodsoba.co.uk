@@ -98,7 +98,7 @@ export default function PricingSection() {
 
               <Link
               href="/contact"
-              className="w-full py-3 px-6 rounded-lg border border-slate-700 hover:border-green-500 transition">
+              className="w-full text-sm py-2 px-3 lg:text-md lg:py-3 lg:px-6 rounded-lg border border-slate-700 hover:border-green-500 transition">
                 Request a Free Website Review
               </Link>
             </div>
