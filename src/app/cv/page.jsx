@@ -18,7 +18,7 @@ export default function CVPage() {
         <section className="mb-12 print:mb-2">
           <h1 className="text-5xl print:text-4xl font-bold">Vinod Soba</h1>
           <p className="text-xl mt-2 text-slate-600">
-            Front End Web Developer
+            Frontend & Full Stack Web Developer
           </p>
           <div className="py-2 flex flex-wrap gap-3 text-sm text-slate-500 items-center">
             <p>Maidenhead, UK</p>
@@ -43,7 +43,7 @@ export default function CVPage() {
             </a>
             <span>•</span>
             <a
-            href="https://www.vinodsoba.co.uk"
+            href="https://vinodsoba.co.uk"
             target="_blank"
             className="hover:text-black transition"
             >
@@ -953,13 +953,13 @@ export default function CVPage() {
                 ))}
             </div>
 
-            <div className="mt-auto flex justify-between">
-                <span className="mb-2">https://www.addisonlee.com</span>
+            <div className="mt-auto pt-6 flex flex-col gap-3">
+                <span className="text-sm text-slate-500 break-all">https://www.addisonlee.com</span>
                 <a
                 href="https://www.addisonlee.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium hover:underline"
+                className="inline-flex items-center gap-2 w-fit"
                 >
 
 
@@ -1030,13 +1030,13 @@ export default function CVPage() {
                 ))}
             </div>
 
-            <div className="mt-auto flex justify-between">
-                <span className="mb-2">https://nationalweddingshow.co.uk</span>
+            <div className="mt-auto pt-6 flex flex-col gap-3">
+                <span className="text-sm text-slate-500 break-all">https://nationalweddingshow.co.uk</span>
                 <a
                 href="https://www.nationalweddingshow.co.uk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium hover:underline"
+                className="inline-flex items-center gap-2 w-fit"
                 >
                 View Website →
                 </a>
@@ -1102,14 +1102,14 @@ export default function CVPage() {
                 </span>
                 ))}
             </div>
-               <div className="mt-auto flex justify-between">
-                <span className="mb-2">https://www.beautybop.co.uk</span>
+               <div className="mt-auto pt-6 flex flex-col gap-3">
+                <span className="text-sm text-slate-500 break-all">https://www.beautybop.co.uk</span>
                
                 <a
                 href="https://www.beautybop.co.uk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium hover:underline"
+                className="inline-flex items-center gap-2 w-fitv"
                 >
                     View Website →
                 </a>
@@ -1159,13 +1159,13 @@ export default function CVPage() {
                 </span>
                 ))}
             </div>
-            <div className="mt-auto flex justify-between">
-            <span className="mb-2">https://stjohnslabs.com</span>
+            <div className="mt-auto pt-6 flex flex-col gap-3">
+            <span className="text-sm text-slate-500 break-all">https://stjohnslabs.com</span>
             <a
                 href="https://stjohnslabs.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium hover:underline"
+                className="inline-flex items-center gap-2 w-fit"
             >
                 View Website →
             </a>
@@ -1202,13 +1202,13 @@ export default function CVPage() {
                 </span>
                 ))}
             </div>
-             <div className="mt-auto flex justify-between">
-            <span className="mb-2">https://www.vinodsoba.co.uk</span>
+             <div className="mt-auto pt-6 flex flex-col gap-3">
+            <span className="text-sm text-slate-500 break-all">https://vinodsoba.co.uk</span>
             <a
-                href="https://www.vinodsoba.co.uk"
+                href="https://vinodsoba.co.uk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium hover:underline"
+                className="inline-flex items-center gap-2 w-fit"
             >
                 View Website →
             </a>
@@ -1294,7 +1294,7 @@ export default function CVPage() {
             <span>•</span>
 
             <a
-                href="https://www.vinodsoba.co.uk"
+                href="https://vinodsoba.co.uk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-black transition"

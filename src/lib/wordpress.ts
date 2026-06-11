@@ -20,7 +20,23 @@ export type WpPost = {
   excerpt: WpRendered;
   content: WpRendered;
   featured_media: number;
-  _embedded?: any; 
+  _embedded?: {
+    "wp:featuredmedia"?: {
+      source_url: string;
+    }[];
+  }; 
+
+  yoast_head_json?: {
+    title?: string;
+    description?: string;
+    og_title?: string;
+    og_description?: string;
+    og_url?: string;
+    og_image?: {
+      url: string;
+    }[];
+  }
+
 };
 
 const httpsAgent = new https.Agent({
@@ -42,12 +58,10 @@ export async function getPosts(): Promise<WpPost[]> {
   return wpFetch<WpPost[]>("/posts?per_page=10&_embed");
 }
 
-export async function getPostBySlug(slug: string) {
-  const posts = await wpFetch<any[]>(
+export async function getPostBySlug(slug: string) : Promise<WpPost | null> {
+  const posts = await wpFetch<WpPost[]>(
     `/posts?slug=${encodeURIComponent(slug)}&_embed`
   );
-
-  console.log("BLOG FETCH:", slug, posts);
 
   return posts.length ? posts[0] : null;
 }

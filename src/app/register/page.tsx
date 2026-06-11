@@ -27,7 +27,7 @@ export default function RegisterPage() {
     }),
 
     onSubmit: async (values) => {
-      console.log("Form Values:", values);
+      console.log("Form Values:");
 
       // FUTURE:
       // Connect WordPress register endpoint here
