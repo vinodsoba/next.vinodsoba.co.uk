@@ -9,6 +9,21 @@ const nextConfig: NextConfig = {
       destination: '/services/:slug',
       permanent: true,
     },
+    {
+      source: "/create-game",
+      destination: "/",
+      permanent: true,
+    },
+    {
+      source: "/signup",
+      destination: "/register",
+      permanent: true,
+    },
+    {
+      source: "/about",
+      destination: "/",
+      permanent: true,
+    }
   ];
 },
 
