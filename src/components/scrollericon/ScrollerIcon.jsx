@@ -32,7 +32,7 @@ export default function SkillsScroller({ skills = [] }) {
 
     content: (
       <div
-        className="prose max-w-none"
+        className="prose max-w-none text-2xl font-light"
         dangerouslySetInnerHTML={{
           __html: item.content?.rendered || "",
         }}

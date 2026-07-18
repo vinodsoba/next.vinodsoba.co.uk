@@ -54,7 +54,7 @@ export default function TabView({ tabs = [] }) {
       <div className="grid lg:grid-cols-2 gap-16 items-center">
 
         {/* Code Panel */}
-        <div className="w-[80%] lg:w-full">
+        <div className="w-[80%] lg:w-full md:w-[50%]">
           <CodePanel
             code={tabs[activeTabIndex].code}
           />

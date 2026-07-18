@@ -25,7 +25,7 @@ export default function HowIWork({
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-4xl text-gray-600 mb-10 py-5 font-light"
+          className="text-4xl text-gray-600 mb-10 py-5 font-normal leading-12"
           dangerouslySetInnerHTML={{ __html: content }}
         />
 
