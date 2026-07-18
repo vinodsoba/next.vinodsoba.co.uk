@@ -27,7 +27,7 @@ export default function WhatIDo({ acf }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               dangerouslySetInnerHTML={{ __html: acf.what_i_do_content }}
-              className="text-gray-600 leading-relaxed mb-8"
+              className="text-gray-600 leading-9 mb-8 md:text-1xl lg:text-2xl font-light"
             />
 
           </div>
@@ -42,7 +42,7 @@ export default function WhatIDo({ acf }) {
             <img
               src={acf.about_me_background_image}
               alt=""
-              className="max-w-[350px] h-auto rounded-lg"
+              className="w-full max-w-[350px] h-auto rounded-lg"
             />
           </motion.div>
 

@@ -78,7 +78,7 @@ function HeroBanner({
         "
       >
         <h1
-          className="mb-6 text-4xl lg:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white"
+          className="mb-6 text-5xl lg:text-5xl lg:text-6xl font-normal leading-tight tracking-tight text-white max-w-[800px] w-full"
           dangerouslySetInnerHTML={{ __html: title }}
         />
 
