@@ -2,6 +2,19 @@ import Link from "next/link";
 import { getServices } from "@/lib/getServices";
 import ServiceCard from "@/components/servicecard/ServiceCard";
 
+export const metadata = {
+  title: "Web Designer London | Freelance Web Designer & Developer based in London | Vinod Soba",
+  description:
+    "Freelance web designer based in London. Passionate about building websites and helping businesses to grow.",
+    robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+
+
+
 type Service = {
   id: number;
   slug: string;

@@ -8,7 +8,7 @@ import { getSkills } from "@/lib/getSkills";
 import { getHomepage } from "@/lib/getHomepage";
 
 export const metadata = {
-  title: "Vinod Soba | Freelance Web Developer London",
+  title: "Freelance Web Designer & Frontend Developer London | Vinod Soba",
   description:
     "Freelance Web Developer specialising in React, Next.js, WordPress and Magento. Building fast, responsive websites for businesses across the UK.",
 

@@ -4,6 +4,18 @@ import Link from "next/link";
 import { getPortfolio } from "@/lib/getPortfolio";
 import Image from "next/image";
 
+
+export const metadata = {
+  title: "Web Designer & Full Stack Developer | Latest Work | Vinod Soba",
+  description:
+    "Web designer and full stack developer based in London.",
+
+    robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 export default async function WorkPage() {
 
   const portfolios = await getPortfolio();
