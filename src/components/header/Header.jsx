@@ -61,26 +61,25 @@ export default function Header({ menuItems = [], }) {
         }
         `}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-8">
 
-          {/* LEFT: Burger */}
-          <button
-            onClick={() => setMenuOpen(true)}
-            className="flex flex-col gap-1 cursor-pointer"
-          >
-            <span className="w-6 h-[2px] bg-white"></span>
-            <span className="w-6 h-[2px] bg-white"></span>
-            <span className="w-6 h-[2px] bg-white"></span>
-          </button>
+           {/* LEFT */}
+          <div className="flex justify-start">
+            <Link href="/">
+              <Logo />
+            </Link>
+          </div>
 
-          {/* CENTER: Logo */}
-          <Link href="/" className="md:absolute md:left-1/2  md:-translate-x-1/2
-    ">
-            <Logo />
-          </Link>
+           <div className="hidden md:flex flex-1 justify-center">
+              <Navigation 
+              setMenuOpen={setMenuOpen}
+              menuItems={menuItems}
+              mobile={false} />
+          </div>
 
+          
           {/* RIGHT: CTAs */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex justify-end items-center gap-4">
             <Link href="/login" className="text-gray-300 hover:text-white">
               Login
             </Link>
@@ -92,13 +91,26 @@ export default function Header({ menuItems = [], }) {
             </Link>
           </div>
 
+          {/* Mobile hamburger */}
+        <button
+          type="button"
+          onClick={() => setMenuOpen(true)}
+          className="flex md:hidden flex-col gap-1.5 cursor-pointer"
+          aria-label="Open navigation"
+          aria-expanded={menuOpen}
+        >
+          <span className="w-6 h-[2px] bg-white" />
+          <span className="w-6 h-[2px] bg-white" />
+          <span className="w-6 h-[2px] bg-white" />
+        </button>
+
         </div>
       </header>
 
       {/* OVERLAY */}
       {menuOpen && (
         <div
-          className="fixed inset-0 bg-black/60 z-40"
+          className="fixed inset-0 bg-black/60 z-40 md:hidden"
           onClick={() => setMenuOpen(false)}
         />
       )}
@@ -106,8 +118,8 @@ export default function Header({ menuItems = [], }) {
       {/* SLIDE MENU */}
       <div
         className={`
-          fixed top-0 left-0 h-full w-[85%] md:w-[400px]
-          bg-black text-white z-50
+          fixed top-0 left-0 h-full w-[85%]
+          bg-black text-white z-50 md:hidden
           transform transition-transform duration-500
           ${menuOpen ? "translate-x-0" : "-translate-x-full"}
         `}

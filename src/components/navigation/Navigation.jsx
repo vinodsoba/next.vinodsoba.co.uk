@@ -4,8 +4,15 @@ import TopNavigation from "../topnavigation/TopNavigation";
 
 function Navigation({ menuItems = [], mobile = false, setMenuOpen }) {
   return (
-    <div className="flex items-center justify-start">
-      <TopNavigation menuItems={menuItems} setMenuOpen={setMenuOpen} mobile={mobile} />
+    <div className={
+      mobile
+      ? "flex justify-start"
+      : "flex justify-center w-full"
+    }>
+      <TopNavigation 
+      menuItems={menuItems} 
+      setMenuOpen={setMenuOpen} 
+      mobile={mobile} />
     </div>
   );
 }
