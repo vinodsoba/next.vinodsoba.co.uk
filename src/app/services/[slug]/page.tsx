@@ -24,8 +24,12 @@ import SecurityPanel from "@/components/hosting/SecurityPanel";
 import WordPressPanel from "@/components/wordpress/WordpressPanel";
 import PricingSection from "@/components/servicesupport/PricingSection";
 
-export async function generateMetadata({ params }) {
-  const slug = params.slug;
+export async function generateMetadata({ params, } : {
+  params: Promise<{ slug: string }>;
+}) {
+
+  // unwrap params
+  const { slug } = await params;
 
   const metadataMap = {
     "web-development": {
@@ -39,9 +43,9 @@ export async function generateMetadata({ params }) {
     },
 
     "web-design": {
-      title: "Web Design Services | Vinod Soba",
+      title: "Freelance Web Designer London | Vinod Soba",
       description:
-        "Professional web design services for businesses.",
+        "Freelance web designer in London creating responsive, SEO-friendly websites for businesses using modern web technologies.",
       robots: {
         index: true,
         follow: true,
