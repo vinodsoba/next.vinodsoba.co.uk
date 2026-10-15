@@ -23,14 +23,17 @@ export default function LayoutWrapper({
   const hideLayout =
     pathname === "/cv";
 
+  const isDashboard = 
+    pathname.startsWith("/dashboard");
+
 
   return (
     <>
-      {!hideLayout && <Header menuItems={menuItems}/>}
+      {!hideLayout && !isDashboard && <Header menuItems={menuItems}/>}
 
       {children}
 
-      {!hideLayout && <Footer />}
+      {!hideLayout && !isDashboard && <Footer />}
     </>
   );
 }

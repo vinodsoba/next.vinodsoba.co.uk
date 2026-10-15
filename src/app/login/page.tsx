@@ -1,36 +1,35 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const router = useRouter();
+
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
 
     const res = await fetch(
-      "https://vinodsoba.co.uk/wp-json/jwt-auth/v1/token",
-      {
+      "/api/auth/login", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+            "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          username: email,
-          password,
+            username: email,
+            password,
         }),
-      }
-    );
+    });
 
     const data = await res.json();
 
-    if (data.token) {
-      localStorage.setItem("token", data.token);
-
-      console.log("Logged in");
+    if (res.ok && data.success) {
+        router.push("/dashboard");
     } else {
-      console.log("Error with token");
+        console.log("Login failed");
     }
   }
 
