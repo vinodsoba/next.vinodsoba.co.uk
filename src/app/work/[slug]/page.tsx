@@ -34,6 +34,9 @@ export default async function PortfolioCaseStudy({
     return <div className="p-10">Project not found</div>;
   }
 
+
+  const isBeautyBop = slug === "beauty-bop";
+
   const isAddisonLee= slug === "addison-lee";
 
   const isWorkStJohnsLab = slug === "stjohns-labs";
@@ -128,7 +131,34 @@ export default async function PortfolioCaseStudy({
       </section>
       {/* Hero Ends here */}
 
-      <section>   
+      <section>  
+
+       {isBeautyBop ? (
+          <>
+            <ContentRow
+              beautyBop
+              eyebrow={portfolio?.acf?.challenge_title}
+              title={portfolio?.acf?.challenge_sub_title}
+              content={portfolio?.acf?.challenge_content}
+              image={portfolio?.acf?.photo_gallery}
+            />
+
+            <ContentRow
+              reverse
+              eyebrow={portfolio?.acf?.eyebrow_2}
+              title={portfolio?.acf?.solution_title}
+              content={portfolio?.acf?.solution_content}
+              image={portfolio?.acf?.photo_gallery_2}
+            />
+
+            <ContentRow
+              eyebrow={portfolio?.acf?.eyebrow}
+              title={portfolio?.acf?.results_title}
+              content={portfolio?.acf?.results_content}
+              image={portfolio?.acf?.photo_gallery_3}
+            />
+          </>
+        ) : null}
   
         {isAddisonLee ? (
           <>
